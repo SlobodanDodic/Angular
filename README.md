@@ -14,6 +14,8 @@ _Angular CLI: 16.2.7 &Longrightarrow; Node: 18.19.0 &Longrightarrow; Package Man
 
 ### Basic Usage:
 
+- ${\color{orange}create.new.project}$
+
 - <p style="color:darkcyan">create new project</p>
 
   > ng new project-name
