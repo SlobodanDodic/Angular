@@ -14,12 +14,16 @@ _Angular CLI: 16.2.7 &Longrightarrow; Node: 18.19.0 &Longrightarrow; Package Man
 
 ### Basic Usage:
 
- <p style="color:blue"> - _create new project_</p>
+- <p style="color:darkcyan">create new project</p>
+
   > ng new project-name
- <p style="color:blue"> - _localhost:4200_</p>
+
+- <p style="color:darkcyan">localhost:4200</p>
+
   > ng serve
 
 ### Component Usage:
 
- <p style="color:blue"> - _component header with prefix name in selector & without test file_</p>
+- <p style="color:darkcyan">component header with prefix name in selector & without test file</p>
+
   > ng g c header --prefix=name --skip-tests
