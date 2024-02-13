@@ -2,7 +2,7 @@
 
 # ![Angular](https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white)
 
-**_Angular CLI: 16.2.7 ; Node: 18.19.0 ; Package Manager: npm 9.8.1_**
+**_Angular CLI: 16.2.7 &curren; Node: 18.19.0 &curren; Package Manager: npm 9.8.1_**
 
 [Angular Documentation](https://angular.io/guide/cheatsheet)
 
@@ -10,15 +10,14 @@
 
 </div>
 
-### _Create new project_
+### Basic Usage:
 
-- > ng new <name>
+- _create new project_
+  > ng new project-name
+- _localhost:4200_
+  > ng serve
 
-### _localhost:4200_
+### Component Usage:
 
-- > ng serve
-
-### _Create a new component with the specified configuration_
-
-- Component header with prefix name in selector & without test file
+- component header with prefix name in selector & without test file
   > ng g c header --prefix=name --skip-tests
