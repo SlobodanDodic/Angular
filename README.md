@@ -1,6 +1,6 @@
 <div align="center">
 
-# ![Angular](https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logostyle=wcolor:hite)
+# ![Angular](ng.svg)
 
 _**Angular CLI:** 16.2.7🔺 **Node:** 18.19.0🔺 **Package Manager:** npm 9.8.1_
 
