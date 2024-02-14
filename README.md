@@ -6,8 +6,6 @@ _**Angular CLI:** 16.2.7🔺 **Node:** 18.19.0🔺 **Package Manager:** npm 9.8.
 
 [Angular Documentation](https://angular.io/guide/cheatsheet)
 
----
-
 </div>
 
 > ▶ **Create new project** 👉 ng new **project-name**
