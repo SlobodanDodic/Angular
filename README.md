@@ -14,7 +14,7 @@ _**Angular CLI:** 16.2.7🔸 **Node:** 18.19.0🔸 **Package Manager:** npm 9.8.
 
 - 🔸 **Create new project**
 
-  > ng new project-name
+  > ng new **project-name**
 
 - 🔸 **localhost:4200**
 
@@ -24,4 +24,4 @@ _**Angular CLI:** 16.2.7🔸 **Node:** 18.19.0🔸 **Package Manager:** npm 9.8.
 
 - 🔸 **Component header with prefix name in selector & without test file**
 
-  > ng g c header --prefix=name --skip-tests
+  > ng g c header --prefix=**name** --skip-tests
