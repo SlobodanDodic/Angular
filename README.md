@@ -14,4 +14,8 @@ _**Angular CLI:** 16.2.7🔺 **Node:** 18.19.0🔺 **Package Manager:** npm 9.8.
 
 > ▶ **localhost:4200** 👉 ng serve
 
-> ▶ **Generate component** 👉 ng g c header --prefix=**name** --skip-tests
+> ▶ **Generate component with selector prefix** 👉 ng g c **c-name** -p=**p-name** --skip-tests
+
+> ▶ **Install bootstrap** 👉 npm install bootstrap
+
+> ▶ **Add to angular.json in styles** 👉 "node_modules/bootstrap/dist/css/bootstrap.css"
