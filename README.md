@@ -14,30 +14,16 @@ _Angular CLI: 16.2.7 &Longrightarrow; Node: 18.19.0 &Longrightarrow; Package Man
 
 ### Basic Usage:
 
-- ${\color{orange}create.new.project}$
-
-- <p style="color:darkcyan">create new project</p>
+- 🔸 Create new project
 
   > ng new project-name
 
-- <p style="color:darkcyan">localhost:4200</p>
+- 🔸 localhost:4200
 
   > ng serve
 
 ### Component Usage:
 
-- <p style="color:darkcyan">component header with prefix name in selector & without test file</p>
+- 🔸 Component header with prefix name in selector & without test file
 
   > ng g c header --prefix=name --skip-tests
-
-<style>
-r { color: Red }
-o { color: Orange }
-g { color: Green }
-</style>
-
-# TODOs:
-
-- <r>TODO:</r> Important thing to do
-- <o>TODO:</o> Less important thing to do
-- <g>DONE:</g> Breath deeply and improve karma
