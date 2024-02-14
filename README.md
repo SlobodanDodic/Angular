@@ -10,18 +10,18 @@ _**Angular CLI:** 16.2.7🔸 **Node:** 18.19.0🔸 **Package Manager:** npm 9.8.
 
 </div>
 
-### Basic Usage:
+#### Basic Usage:
 
-- 🔸 **Create new project**
+🔹 **Create new project**
 
-  > ng new **project-name**
+> ▶ ng new **project-name**
 
-- 🔸 **localhost:4200**
+🔹 **localhost:4200**
 
-  > ng serve
+> ▶ ng serve
 
-### Component Usage:
+#### Component Usage:
 
-- 🔸 **Component header with prefix name in selector & without test file**
+🔹 **Component header with prefix name in selector & without test file**
 
-  > ng g c header --prefix=**name** --skip-tests
+> ▶ ng g c header --prefix=**name** --skip-tests
