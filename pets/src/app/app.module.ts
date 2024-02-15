@@ -5,8 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SearchFormComponent } from './search-form/search-form.component';
-import { PetListComponent } from './pet-list/pet-list.component';
-import { PetComponent } from './pet/pet.component';
+import { PetListComponent } from './pet/pet-list/pet-list.component';
+import { PetComponent } from './pet/pet/pet.component';
 
 @NgModule({
   declarations: [

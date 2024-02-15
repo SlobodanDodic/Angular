@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Pet } from '../pet/model/pet';
+import { Pet } from '../model/pet';
+import { PETS } from '../data/pets';
 
 @Component({
   selector: 'pets-pet-list',
@@ -11,5 +12,7 @@ export class PetListComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.pets = PETS.map((pet) => new Pet(pet));
+  }
 }

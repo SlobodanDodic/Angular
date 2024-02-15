@@ -1,0 +1,21 @@
+<div class="row">
+  <h3>{{ pet.name }}</h3>
+</div>
+<div class="row">
+  <div class="row">
+    <div class="col-sm-auto">
+      <img src={{pet.imageUrl}} alt="pet">
+    </div>
+    <div class="col-sm-auto">
+      <h3>Generalije</h3>
+      <p class="m-0"><b>Godine:</b> {{ pet.age }}</p>
+      <p class="m-0"><b>Pol:</b> {{ pet.gender === 'f' ? 'Ženski' : 'Muški' }}</p>
+      <p class="m-0"><b>Rasa:</b> {{ pet.breed }}</p>
+      <p class="m-0"><b>Datum objave:</b> {{ pet.dateOfCreation | date:'dd.MM.yyyy' }}</p>
+      <p class="m-0"><b>Hobiji:</b></p>
+      <ul>
+        <li *ngFor="let hobby of pet.hobbies" class="m-0">{{ hobby }}</li>
+      </ul>
+    </div>
+  </div>
+</div>
