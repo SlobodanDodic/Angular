@@ -9,7 +9,13 @@ import { PetListComponent } from './pet-list/pet-list.component';
 import { PetComponent } from './pet/pet.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, SearchFormComponent, PetListComponent, PetComponent],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    SearchFormComponent,
+    PetListComponent,
+    PetComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
