@@ -13,7 +13,7 @@ export class Pet {
     this.gender = (obj && obj.gender) || null;
     this.breed = (obj && obj.breed) || null;
     this.dateOfCreation = (obj && obj.dateOfCreation) || null;
-    this.imageUrl = (obj && obj.imageUrl) || null;
+    this.imageUrl = (obj && obj.imageUrl) || 'assets/images/pet.png';
     this.hobbies = (obj && obj.hobbies) || null;
   }
 }
