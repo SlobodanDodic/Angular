@@ -1,0 +1,2 @@
+<h3>Unread emails: {{unread}}</h3>
+<emails-email *ngFor="let itEmail of emails" [email]="itEmail" (readUnread)="onReadUnreadMail($event)"></emails-email>

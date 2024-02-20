@@ -7,10 +7,17 @@ import { HeaderComponent } from './header/header.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { WineListComponent } from './wine/wine-list/wine-list.component';
 import { WineFormComponent } from './wine/wine-form/wine-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, NavbarComponent, WineListComponent, WineFormComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    NavbarComponent,
+    WineListComponent,
+    WineFormComponent,
+  ],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

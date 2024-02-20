@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col">
+    <div>
+      <b>E-mail: </b>
+      {{email.time}}
+    </div>
+    <div>
+      <label class="checkbox-inline">
+        <input type="checkbox" [checked]="email.read" (change)="onReadChange()">
+        Read
+      </label>
+    </div>
+    <div>From: {{email.from}}</div>
+    <div>Subject: {{email.subject}}</div>
+    <textarea readonly class="form-control" rows="6" id="comment" value="{{email.body}}"></textarea>
+  </div>
+</div>
