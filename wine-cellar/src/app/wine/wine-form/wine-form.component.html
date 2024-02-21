@@ -15,7 +15,8 @@
     <label for="year" class="col-2 col-form-label">Year</label>
     <div class="col-10">
       <input formControlName="year" class="form-control" type="number" id="year" placeholder="Year">
-      <small *ngIf="name?.touched && name?.errors?.['required']" class="text-danger">Year is required!</small>
+      <small *ngIf="year?.touched && year?.errors?.['required']" class="text-danger">Year is required!</small>
+      <small *ngIf="year?.touched && year?.errors?.['min']" class="text-danger">Can't be older than 1747!</small>
     </div>
   </div>
 
@@ -24,7 +25,7 @@
     <div class="col-10">
       <input formControlName="country" class="form-control" type="text" id="country" name="country"
         placeholder="Country">
-      <small *ngIf="name?.touched && name?.errors?.['required']" class="text-danger">Country is required!</small>
+      <small *ngIf="country?.touched && country?.errors?.['required']" class="text-danger">Country is required!</small>
     </div>
   </div>
 
@@ -33,7 +34,8 @@
     <div class="col-10">
       <textarea formControlName="description" class="form-control" rows="3" id="description" name="description"
         placeholder="Description"></textarea>
-      <small *ngIf="name?.touched && name?.errors?.['required']" class="text-danger">Description is required!</small>
+      <small *ngIf="description?.touched && description?.errors?.['required']" class="text-danger">Description is
+        required!</small>
     </div>
   </div>
 

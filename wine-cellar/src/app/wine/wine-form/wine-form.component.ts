@@ -25,6 +25,18 @@ export class WineFormComponent implements OnInit {
     return this.form.get('name');
   }
 
+  get year() {
+    return this.form.get('year');
+  }
+
+  get country() {
+    return this.form.get('country');
+  }
+
+  get description() {
+    return this.form.get('description');
+  }
+
   ngOnInit(): void {
     let wine: Wine = new Wine({
       name: 'Vino',
