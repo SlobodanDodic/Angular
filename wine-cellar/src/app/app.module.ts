@@ -8,6 +8,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { WineListComponent } from './wine/wine-list/wine-list.component';
 import { WineFormComponent } from './wine/wine-form/wine-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { WinePaginationComponent } from './wine/wine-pagination/wine-pagination.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     NavbarComponent,
     WineListComponent,
     WineFormComponent,
+    WinePaginationComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],

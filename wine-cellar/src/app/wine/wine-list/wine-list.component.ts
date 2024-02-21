@@ -8,11 +8,13 @@ import { WINES } from '../data/wines';
   styleUrls: ['./wine-list.component.css'],
 })
 export class WineListComponent implements OnInit {
-  wines: Wine[] = WINES?.map((wine) => new Wine(wine));
+  wines: Wine[] = [];
 
-  constructor() {}
+  WINE_PER_PAGE: number = 5;
+
+  pageCount: number = Math.ceil(WINES.length / this.WINE_PER_PAGE);
 
   ngOnInit(): void {
-    // this.wines = WINES.map((wine) => new Wine(wine));
+    this.wines = WINES?.map((wine) => new Wine(wine));
   }
 }
