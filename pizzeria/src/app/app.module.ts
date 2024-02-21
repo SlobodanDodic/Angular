@@ -17,11 +17,8 @@ import { PizzaFormComponent } from './pizza/pizza-form/pizza-form.component';
     PizzaFormComponent,
     PizzaDetailsComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
