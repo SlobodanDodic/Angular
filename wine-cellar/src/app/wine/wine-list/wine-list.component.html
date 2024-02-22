@@ -8,8 +8,9 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let wine of wines">
-      <td>{{wine.id}}</td>
+    <tr *ngFor="let wine of wines; let i = index">
+      <td>{{ (currentPage - 1) * WINE_PER_PAGE + i + 1 }}</td>
+      <!-- <td>{{wine.id}}</td> -->
       <td>{{wine.name}}</td>
       <td>{{wine.year}}</td>
       <td>{{wine.country}}</td>
@@ -17,4 +18,4 @@
   </tbody>
 </table>
 
-<wc-wine-pagination [pageCount]="pageCount"></wc-wine-pagination>
+<wc-wine-pagination [pageCount]="pageCount" (pageChange)="onPageChange($event)"></wc-wine-pagination>

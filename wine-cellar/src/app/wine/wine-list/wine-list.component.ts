@@ -14,7 +14,16 @@ export class WineListComponent implements OnInit {
 
   pageCount: number = Math.ceil(WINES.length / this.WINE_PER_PAGE);
 
+  currentPage: number = 1;
+
   ngOnInit(): void {
-    this.wines = WINES?.map((wine) => new Wine(wine));
+    this.onPageChange(1);
+  }
+
+  onPageChange(page: number): void {
+    this.currentPage = page;
+    const startIdx = (page - 1) * this.WINE_PER_PAGE;
+    const endIdx = startIdx + this.WINE_PER_PAGE;
+    this.wines = WINES.slice(startIdx, endIdx).map((wine) => new Wine(wine));
   }
 }
