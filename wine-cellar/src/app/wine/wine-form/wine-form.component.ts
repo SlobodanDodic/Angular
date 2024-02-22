@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Wine } from '../model/wine';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'wc-wine-form',
@@ -15,10 +16,15 @@ export class WineFormComponent implements OnInit {
     description: new FormControl('', [Validators.required]),
   });
 
+  constructor(private route: ActivatedRoute) {}
+
   onSubmit(): void {
     let wine: Wine = new Wine(this.form.value);
     console.log(JSON.stringify(wine));
     this.form.reset();
+
+    let id: number = Number(this.route.snapshot.params['id']);
+    alert(id);
   }
 
   get name() {
@@ -45,5 +51,7 @@ export class WineFormComponent implements OnInit {
       description: 'none',
     });
     this.form.patchValue(wine);
+    let id: number = Number(this.route.snapshot.params['id']);
+    console.log(id);
   }
 }

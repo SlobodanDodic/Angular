@@ -2,9 +2,11 @@
   <thead>
     <tr>
       <th></th>
-      <th>Name</th>
-      <th>Year</th>
-      <th>Country</th>
+      <th>Name <button class="btn btn-link"><span class="fa fa-sort"></span></button></th>
+      <th>Year <button class="btn btn-link"><span class="fa fa-sort"></span></button></th>
+      <th>Country <button class="btn btn-link"><span class="fa fa-sort"></span></button></th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -14,6 +16,9 @@
       <td>{{wine.name}}</td>
       <td>{{wine.year}}</td>
       <td>{{wine.country}}</td>
+      <td><button class="btn btn-link" [routerLink]="['/wines/', wine.id]"><span class="fa fa-edit"></span></button>
+      </td>
+      <td><button class="btn btn-link"><span class="fa fa-remove" (ngSubmit)="onSubmit()"></span></button></td>
     </tr>
   </tbody>
 </table>
