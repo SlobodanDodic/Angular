@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Wine } from '../model/wine';
-import { WINES } from '../data/wines';
 import { ActivatedRoute } from '@angular/router';
+import { WineService } from '../wine-service/wine.service';
 
 @Component({
   selector: 'wc-wine-list',
@@ -10,28 +10,41 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class WineListComponent implements OnInit {
   wines: Wine[] = [];
-
   WINE_PER_PAGE: number = 5;
-
-  pageCount: number = Math.ceil(WINES.length / this.WINE_PER_PAGE);
-
   currentPage: number = 1;
+  pageCount: number = 0;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+    private route: ActivatedRoute,
+    private wineService: WineService
+  ) {}
 
   ngOnInit(): void {
-    this.onPageChange(1);
+    this.loadWines();
   }
 
-  onPageChange(page: number): void {
+  loadWines(): void {
+    this.wines = this.wineService.readAll(this.currentPage, this.WINE_PER_PAGE);
+    this.pageCount = this.wineService.pageCount(this.WINE_PER_PAGE);
+  }
+
+  goToPage(page: number): void {
     this.currentPage = page;
-    const startIdx = (page - 1) * this.WINE_PER_PAGE;
-    const endIdx = startIdx + this.WINE_PER_PAGE;
-    this.wines = WINES.slice(startIdx, endIdx).map((wine) => new Wine(wine));
+    this.loadWines();
   }
 
   onSubmit(): void {
     let id: number = Number(this.route.snapshot.params['id']);
     console.log(id);
+  }
+
+  onDelete(id: number): void {
+    this.wineService.delete(id);
+    this.loadWines();
+  }
+
+  onPageChange(page: number): void {
+    this.currentPage = page;
+    this.loadWines();
   }
 }

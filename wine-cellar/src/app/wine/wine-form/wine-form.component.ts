@@ -44,13 +44,6 @@ export class WineFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    let wine: Wine = new Wine({
-      name: 'Vino',
-      year: 1899,
-      country: 'Mexico',
-      description: 'none',
-    });
-    this.form.patchValue(wine);
     let id: number = Number(this.route.snapshot.params['id']);
     console.log(id);
   }

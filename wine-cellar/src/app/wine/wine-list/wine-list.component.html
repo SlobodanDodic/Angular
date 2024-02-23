@@ -11,14 +11,13 @@
   </thead>
   <tbody>
     <tr *ngFor="let wine of wines; let i = index">
-      <td>{{ (currentPage - 1) * WINE_PER_PAGE + i + 1 }}</td>
-      <!-- <td>{{wine.id}}</td> -->
+      <td>{{ ((currentPage - 1) * WINE_PER_PAGE) + i + 1 }}</td>
       <td>{{wine.name}}</td>
       <td>{{wine.year}}</td>
       <td>{{wine.country}}</td>
       <td><button class="btn btn-link" [routerLink]="['/wines/', wine.id]"><span class="fa fa-edit"></span></button>
       </td>
-      <td><button class="btn btn-link"><span class="fa fa-remove" (ngSubmit)="onSubmit()"></span></button></td>
+      <td><button class="btn btn-link"><span class="fa fa-remove" (click)="onDelete(wine.id)"></span></button></td>
     </tr>
   </tbody>
 </table>
