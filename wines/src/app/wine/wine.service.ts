@@ -1,38 +1,33 @@
+const baseUrl = 'http://localhost:3000/api/wines';
+
 import { Injectable } from '@angular/core';
 import { Wine } from './model/wine';
-import { WINES } from './wines';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class WineService {
-  private wines: Wine[] = [];
-  private nextId: number = 0;
+  constructor(private httpClient: HttpClient) {}
 
-  constructor() {
-    this.wines = WINES.map((jsonWine) => new Wine(jsonWine));
-    this.nextId = Math.max(...this.wines.map((wine) => wine.id)) + 1;
+  create(wine: Wine): Observable<any> {
+    return this.httpClient.post(baseUrl, wine);
   }
 
-  create(wine: Wine): void {
-    wine.id = this.nextId;
-    this.wines.push(wine);
-    this.nextId++;
+  read(id: number): Observable<any> {
+    return this.httpClient.get(baseUrl + '/' + id);
   }
 
-  read(id: number): Wine {
-    return this.wines.find((wine) => wine.id == id) || new Wine();
+  readAll(): Observable<any> {
+    return this.httpClient.get(baseUrl);
   }
 
-  readAll(): Wine[] {
-    return this.wines.map((wine) => wine);
+  update(wine: Wine): Observable<any> {
+    return this.httpClient.put(baseUrl + '/' + wine.id, wine);
   }
 
-  update(wine: Wine): void {
-    this.wines[this.wines.findIndex((itWine) => itWine.id == wine.id)] = wine;
-  }
-
-  delete(id: number): void {
-    this.wines = this.wines.filter((wine) => wine.id != id);
+  delete(id: number): Observable<any> {
+    return this.httpClient.delete(baseUrl + '/' + id);
   }
 }

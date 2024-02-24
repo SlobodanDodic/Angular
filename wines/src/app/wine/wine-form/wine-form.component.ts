@@ -38,10 +38,17 @@ export class WineFormComponent implements OnInit {
 
   ngOnInit(): void {
     let id: number = Number(this.route.snapshot.params['id']);
-
+    console.log('id: ', id);
     if (id) {
-      let wine: Wine = this.wineService.read(id);
-      this.form.patchValue(wine);
+      this.wineService.read(id).subscribe({
+        next: (response: any) => {
+          let wine: Wine = new Wine(response);
+          this.form.patchValue(wine);
+        },
+        error: (response: any) => {
+          console.log('error: ', response.statusText);
+        },
+      });
     }
   }
 
@@ -51,11 +58,23 @@ export class WineFormComponent implements OnInit {
 
     if (id) {
       wine.id = id;
-      this.wineService.update(wine);
+      this.wineService.update(wine).subscribe({
+        next: (response: any) => {
+          this.router.navigate(['wines']);
+        },
+        error: (response: any) => {
+          console.log('error: ', response.statusText);
+        },
+      });
     } else {
-      this.wineService.create(wine);
+      this.wineService.create(wine).subscribe({
+        next: (response: any) => {
+          this.router.navigate(['wines']);
+        },
+        error: (response: any) => {
+          console.log('error: ', response.statusText);
+        },
+      });
     }
-
-    this.router.navigate(['wines']);
   }
 }
