@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Pizza } from '../model/pizza';
-import { PIZZAS } from '../data/pizzas';
+import { PizzaService } from '../pizza.service';
 
 @Component({
   selector: 'app-pizza-list',
@@ -8,11 +8,35 @@ import { PIZZAS } from '../data/pizzas';
   styleUrls: ['./pizza-list.component.css'],
 })
 export class PizzaListComponent implements OnInit {
-  pizzas: Pizza[] = PIZZAS?.map((pizza) => new Pizza(pizza));
+  pizzas: Pizza[] = [];
 
-  constructor() {}
+  constructor(private pizzaService: PizzaService) {}
 
-  ngOnInit() {
-    console.log(this.pizzas);
+  ngOnInit(): void {
+    this.fetchPizzas();
+  }
+
+  fetchPizzas(): void {
+    this.pizzaService.readAll().subscribe({
+      next: (response: any) => {
+        this.pizzas = response.map((jsonWine: any) => {
+          return new Pizza(jsonWine);
+        });
+      },
+      error: (response: any) => {
+        console.log('error: ', response.statusText);
+      },
+    });
+  }
+
+  onDelete(id: number): void {
+    this.pizzaService.delete(id).subscribe({
+      next: (response: any) => {
+        this.fetchPizzas();
+      },
+      error: (response: any) => {
+        console.log('error: ', response.statusText);
+      },
+    });
   }
 }

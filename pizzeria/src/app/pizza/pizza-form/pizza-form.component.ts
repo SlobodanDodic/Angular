@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Pizza } from '../model/pizza';
+import { PizzaService } from '../pizza.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-pizza-form',
@@ -14,14 +16,6 @@ export class PizzaFormComponent implements OnInit {
     grade: new FormControl('', [Validators.min(1), Validators.max(5)]),
     price: new FormControl('', [Validators.min(0)]),
   });
-
-  onSubmit(): void {
-    if (this.form.valid) {
-      let pizza: Pizza = new Pizza(this.form.value);
-      console.log(JSON.stringify(pizza));
-      this.form.reset();
-    }
-  }
 
   get name() {
     return this.form.get('name');
@@ -39,5 +33,51 @@ export class PizzaFormComponent implements OnInit {
     return this.form.get('price');
   }
 
-  ngOnInit(): void {}
+  constructor(
+    private pizzaService: PizzaService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
+
+  ngOnInit(): void {
+    let id: number = Number(this.route.snapshot.params['id']);
+    console.log('id: ', id);
+    if (id) {
+      this.pizzaService.read(id).subscribe({
+        next: (response: any) => {
+          let pizza: Pizza = new Pizza(response);
+          this.form.patchValue(pizza);
+        },
+        error: (response: any) => {
+          console.log('error: ', response.statusText);
+        },
+      });
+    }
+  }
+
+  onSubmit(): void {
+    let pizza: Pizza = new Pizza(this.form.value);
+    let id: number = Number(this.route.snapshot.params['id']);
+
+    if (id) {
+      pizza.id = id;
+      this.pizzaService.update(pizza).subscribe({
+        next: (response: any) => {
+          this.router.navigate(['pizzas']);
+        },
+        error: (response: any) => {
+          console.log('error: ', response.statusText);
+        },
+      });
+    } else {
+      this.pizzaService.create(pizza).subscribe({
+        next: (response: any) => {
+          this.router.navigate(['pizzas']);
+        },
+        error: (response: any) => {
+          console.log('error: ', response.statusText);
+        },
+      });
+    }
+  }
 }

@@ -1,1 +1,1 @@
-<app-pizza-details></app-pizza-details>
+<app-pizza-details *ngFor="let pizza of pizzas" [pizza]="pizza" (deletePizza)="onDelete(pizza.id)"></app-pizza-details>
