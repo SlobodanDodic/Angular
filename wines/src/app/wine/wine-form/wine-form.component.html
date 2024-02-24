@@ -1,0 +1,44 @@
+<form [formGroup]="form">
+  <div class="form-group row">
+    <label for="name" class="col-2 col-form-label">Name</label>
+    <div class="col-10">
+      <input formControlName="name" class="form-control" type="text" id="name" placeholder="Name">
+      <small *ngIf="name?.touched && name?.errors?.['required']" class="text-danger">Name is required!</small>
+      <small *ngIf="name?.touched && name?.errors?.['minlength']" class="text-danger">Name must be at least 2 characters
+        long!</small>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="year" class="col-2 col-form-label">Year</label>
+    <div class="col-10">
+      <input formControlName="year" class="form-control" type="number" id="year" placeholder="Year">
+      <small *ngIf="year?.touched && year?.errors?.['required']" class="text-danger">Year is required!</small>
+      <small *ngIf="year?.touched && year?.errors?.['min']" class="text-danger">Year must be greater than 1628!</small>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="country" class="col-2 col-form-label">Country</label>
+    <div class="col-10">
+      <input formControlName="country" class="form-control" type="text" id="country" name="country"
+        placeholder="Country">
+      <small *ngIf="country?.touched && country?.errors" class="text-danger">Country is required!</small>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="description" class="col-2 col-form-label">Description</label>
+    <div class="col-10">
+      <textarea formControlName="description" class="form-control" rows="3" id="description" name="description"
+        placeholder="Description"></textarea>
+      <small *ngIf="description?.touched && description?.errors" class="text-danger">Description is required!</small>
+    </div>
+  </div>
+
+  <div class="form-group row float-end">
+    <div class="col-12">
+      <button (click)="onSubmit()" [disabled]="form.invalid" class="btn btn-primary" type="submit">Submit</button>
+    </div>
+  </div>
+</form>

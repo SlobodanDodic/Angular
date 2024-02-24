@@ -1,0 +1,22 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Name <button class="btn btn-link"><span class="fa fa-sort"></span></button></th>
+            <th>Year <button class="btn btn-link"><span class="fa fa-sort"></span></button></th>
+            <th>Country <button class="btn btn-link"><span class="fa fa-sort"></span></button></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let itWine of wines; let it = index">
+          <td>{{it + 1}}</td>
+          <td>{{itWine.name}}</td>
+          <td>{{itWine.year}}</td>
+          <td>{{itWine.country}}</td>
+          <td><button [routerLink]="['/wines/', itWine.id]" class="btn btn-link"><span class="fa fa-edit"></span></button></td>
+          <td><button (click)="onDelete(itWine.id)" class="btn btn-link"><span class="fa fa-remove"></span></button></td>
+        </tr>
+    </tbody>
+  </table>
