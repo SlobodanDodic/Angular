@@ -7,7 +7,8 @@
     "description": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
     "duration": "142",
     "director": "Frank Darabont",
-    "genre": "drama"
+    "genre": "drama",
+    "image": "https://www.movieposters.com/cdn/shop/files/shawshank.128000_c9a45f6e-7685-4a95-b3ec-0dac14f43543_480x.progressive.jpg?v=1697998923"
   },
   {
     "id": 2,
@@ -17,37 +18,41 @@
     "description": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
     "duration": "175",
     "director": "Francis Ford Coppola",
-    "genre": "drama"
+    "genre": "drama",
+    "image": "https://www.movieposters.com/cdn/shop/products/b5282f72126e4919911509e034a61f66_6ce2486d-e0da-4b7a-9148-722cdde610b8_480x.progressive.jpg?v=1573616025"
   },
   {
     "id": 3,
     "name": "The Dark Knight",
     "year": "2008",
     "rating": "9.0",
-    "description": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice. ",
+    "description": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must fight.",
     "duration": "152",
     "director": "Christopher Nolan",
-    "genre": "action"
+    "genre": "action",
+    "image": "https://www.movieposters.com/cdn/shop/products/d3401e97e249c56ed1c11a13dd02b47f_480x.progressive.jpg?v=1573652550"
   },
   {
     "id": 4,
     "name": "Pulp Fiction",
     "year": "1994",
     "rating": "8.9",
-    "description": "The lives of two mob hit men, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+    "description": "The lives of two mob hit men, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales.",
     "duration": "154",
     "director": "Quentin Tarantino",
-    "genre": "drama"
+    "genre": "drama",
+    "image": "https://www.movieposters.com/cdn/shop/products/pulpfiction.2436_480x.progressive.jpg?v=1620048742"
   },
   {
     "id": 5,
     "name": "Schindler's List",
     "year": "1993",
     "rating": "8.9",
-    "description": "In Poland during World War II, Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis. ",
+    "description": "In Poland during World War II, Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution",
     "duration": "185",
     "director": "Steven Spielberg",
-    "genre": "drama"
+    "genre": "drama",
+    "image": "https://www.movieposters.com/cdn/shop/files/schindlers-list_d41a77ec_480x.progressive.jpg?v=1697746571"
   },
   {
     "id": 6,
@@ -57,7 +62,8 @@
     "description": "A dissenting juror in a murder trial slowly manages to convince the others that the case is not as obviously clear as it seemed in court. ",
     "duration": "96",
     "director": "Sidney Lumet",
-    "genre": "drama"
+    "genre": "drama",
+    "image": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p19500_v_v9_ad.jpg"
   },
   {
     "id": 7,
@@ -67,66 +73,40 @@
     "description": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
     "duration": "169",
     "director": "Christopher Nolan",
-    "genre": "sci-fi"
+    "genre": "sci-fi",
+    "image": "https://www.movieposters.com/cdn/shop/files/interstellar_593eaeff_480x.progressive.jpg?v=1698434355"
   },
   {
     "id": 8,
-    "name": "Fight Club",
-    "year": "1999",
-    "rating": "8.9",
-    "description": "An insomniac office worker, looking for a way to change his life, crosses paths with a devil-may-care soap maker, forming an underground fight club that evolves into something much, much more...",
-    "duration": "145",
-    "director": "David Fincher",
-    "genre": "drama"
-  },
-  {
-    "id": 9,
     "name": "Inception",
     "year": "2010",
     "rating": "8.8",
-    "description": "A thief who steals corporate secrets through use of the dream-sharing technology is given the inverse task of planting an idea into the mind of a CEO.",
+    "description": "A thief who steals corporate secrets through use of the dream-sharing technology is given the task of planting an idea into the mind of a CEO.",
     "duration": "148",
     "director": "Christopher Nolan",
-    "genre": "action"
+    "genre": "action",
+    "image": "https://www.movieposters.com/cdn/shop/files/inception.mpw.123395_9e0000d1-bc7f-400a-b488-15fa9e60a10c_480x.progressive.jpg?v=1708527589"
   },
   {
-    "id": 10,
-    "name": "Up",
-    "year": "2009",
-    "rating": "8.3",
-    "description": "Seventy-eight year old Carl Fredricksen travels to Paradise Falls in his home equipped with balloons, inadvertently taking a young stowaway.",
-    "duration": "96",
-    "director": "Pete Docter",
-    "genre": "comedy"
-  },
-  {
-    "id": 11,
+    "id": 9,
     "name": "The Pianist",
     "year": "2002",
     "rating": "7.9",
     "description": "A Polish Jewish musician struggles to survive the destruction of the Warsaw ghetto of World War II.",
     "duration": "150",
     "director": "Roman Polanski",
-    "genre": "drama"
+    "genre": "drama",
+    "image": "https://www.movieposters.com/cdn/shop/products/the-pianist_a4fcd9c6_480x.progressive.jpg?v=1626109939"
   },
   {
-    "id": 12,
-    "name": "Dogville",
-    "year": "2004",
-    "rating": "8.1",
-    "description": "A woman on the run from the mob is reluctantly accepted in a small Colorado town. In exchange, she agrees to work for them. As a search visits town, she finds out that their support has a price. Yet her dangerous secret is never far away... ",
-    "duration": "178",
-    "director": "Lars von Trier",
-    "genre": "drama"
-  },
-  {
-    "id": 13,
-    "name": "Silent Hill",
-    "year": "2006",
-    "rating": "6.6",
-    "description": "A woman goes in search for her daughter within the confines of a strange, desolate town called Silent Hill.",
-    "duration": "125",
-    "director": "Christophe Gans",
-    "genre": "horror"
+    "id": 10,
+    "name": "Lord of the Rings",
+    "year": "2001",
+    "rating": "10",
+    "description": "The Lord of the Rings is a trilogy of epic fantasy adventure films based on the novel The Lord of the Rings by J.R.R. Tolkien.",
+    "duration": "683",
+    "director": "Peter Jackson",
+    "genre": "adventure",
+    "image": "https://www.movieposters.com/cdn/shop/files/ItemR81771_jpg_480x.progressive.jpg?v=1694023916"
   }
 ]

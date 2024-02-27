@@ -1,0 +1,34 @@
+.box {
+  margin: 1rem;
+  display: grid;
+  justify-content: center;
+}
+
+.box p {
+  font-size: 14px;
+  text-align: justify;
+}
+
+.box .img-fluid {
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.box .btn {
+  display: flex;
+}
+
+.ratings {
+  margin-right: 10px;
+}
+
+.ratings i {
+  color: #cecece;
+  font-size: 16px;
+}
+
+.rating-color {
+  color: #fbc634 !important;
+}
