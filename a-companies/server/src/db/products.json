@@ -1,0 +1,403 @@
+[
+    {
+      "_id": 0,
+      "name": "ullamco sunt",
+      "brand": "CONFERIA",
+      "description": "Magna mollit ullamco qui laboris aute aute cillum elit excepteur mollit nisi exercitation. Anim quis adipisicing consequat minim est minim veniam eiusmod fugiat nisi in Lorem cillum. Nostrud incididunt laborum tempor quis sint cupidatat. Ut occaecat elit exercitation esse dolor anim proident Lorem amet sint cillum. Aliqua adipisicing minim veniam excepteur amet.\r\n",
+      "priceRsd": 936.79,
+      "tags": [
+        "sunt",
+        "velit",
+        "incididunt",
+        "aute",
+        "in",
+        "non",
+        "mollit"
+      ]
+    },
+    {
+      "_id": 1,
+      "name": "in ullamco",
+      "brand": "EXPOSA",
+      "description": "Adipisicing nostrud ut ad id. Laborum incididunt veniam esse cillum minim irure voluptate occaecat quis. Tempor esse veniam culpa culpa cillum. Enim officia anim magna veniam.\r\n",
+      "priceRsd": 858.84,
+      "tags": [
+        "fugiat",
+        "nulla",
+        "ex"
+      ]
+    },
+    {
+      "_id": 2,
+      "name": "aliquip ullamco",
+      "brand": "EARTHMARK",
+      "description": "Cupidatat eiusmod quis ex culpa aliqua dolor. Non consequat eiusmod id minim esse ea deserunt tempor officia officia. Magna in adipisicing id consectetur non magna id excepteur aliqua enim nulla. Ipsum ullamco incididunt minim commodo quis sit et qui ut non ex. Consectetur est esse cupidatat occaecat tempor dolore nostrud laboris aliquip magna amet quis tempor deserunt. Cillum minim adipisicing reprehenderit commodo sint ullamco adipisicing consequat anim consectetur.\r\n",
+      "priceRsd": 243.45,
+      "tags": [
+        "tempor",
+        "minim",
+        "ut"
+      ]
+    },
+    {
+      "_id": 3,
+      "name": "veniam ipsum",
+      "brand": "TURNABOUT",
+      "description": "Ad cupidatat nisi quis adipisicing qui occaecat dolore exercitation ullamco elit minim culpa. Eiusmod nostrud ex officia non magna dolore id fugiat incididunt deserunt tempor. Reprehenderit adipisicing labore fugiat do enim fugiat duis esse in aliqua duis minim pariatur incididunt. Ea cupidatat dolor consequat ea deserunt eiusmod. Voluptate enim ea anim consectetur veniam eiusmod dolor deserunt.\r\n",
+      "priceRsd": 243.7,
+      "tags": [
+        "laboris",
+        "eiusmod",
+        "in",
+        "proident",
+        "officia"
+      ]
+    },
+    {
+      "_id": 4,
+      "name": "velit ut",
+      "brand": "CONFRENZY",
+      "description": "Aliquip quis laborum cupidatat eu sint. Sunt cillum veniam aliquip adipisicing duis est quis anim nostrud anim exercitation veniam mollit. Lorem ea sunt labore non voluptate cupidatat laboris sit ipsum officia deserunt esse. Labore proident cillum eu est Lorem cillum aute commodo culpa consectetur magna. Sit cupidatat in reprehenderit qui officia duis nulla nisi ullamco occaecat est excepteur. Do nostrud irure ex ad nulla ipsum enim. Ullamco amet ex aliqua in id aute ex aliquip mollit consequat culpa ea excepteur.\r\n",
+      "priceRsd": 532.75,
+      "tags": [
+        "aliquip",
+        "adipisicing",
+        "excepteur",
+        "laborum",
+        "officia",
+        "elit"
+      ]
+    },
+    {
+      "_id": 5,
+      "name": "elit enim",
+      "brand": "TEMORAK",
+      "description": "Tempor exercitation exercitation proident tempor dolore tempor magna duis aliquip deserunt elit sit velit. Do sit quis cupidatat fugiat ad esse dolore voluptate cillum eiusmod nisi sint. Fugiat ut ut ex nostrud magna ad consectetur esse excepteur cillum ipsum ad cillum qui.\r\n",
+      "priceRsd": 936.74,
+      "tags": [
+        "do",
+        "do",
+        "occaecat",
+        "ex"
+      ]
+    },
+    {
+      "_id": 6,
+      "name": "aliqua fugiat",
+      "brand": "CYTREX",
+      "description": "Amet ea proident ad officia esse culpa reprehenderit irure. Velit consectetur sit excepteur laborum culpa amet irure dolore aliqua aute anim veniam. Nostrud ea irure non est proident dolor ad anim minim eu. Deserunt voluptate officia velit commodo enim proident do quis. Duis laborum consectetur eiusmod aliqua exercitation excepteur. Veniam occaecat sit fugiat Lorem dolore ut deserunt mollit quis. Laboris ipsum veniam sunt ipsum duis occaecat nulla.\r\n",
+      "priceRsd": 375.01,
+      "tags": [
+        "ea",
+        "ut",
+        "minim",
+        "occaecat",
+        "excepteur",
+        "dolor"
+      ]
+    },
+    {
+      "_id": 7,
+      "name": "eiusmod officia",
+      "brand": "ISOPLEX",
+      "description": "Lorem qui voluptate ut pariatur non ullamco. Pariatur id deserunt eu qui in veniam mollit duis qui aliqua. Id aliqua magna amet ut nulla ullamco. Consequat veniam dolor veniam excepteur exercitation aute dolor elit mollit et exercitation deserunt sunt.\r\n",
+      "priceRsd": 842.82,
+      "tags": [
+        "velit",
+        "dolor",
+        "dolore",
+        "voluptate"
+      ]
+    },
+    {
+      "_id": 8,
+      "name": "laborum qui",
+      "brand": "ELECTONIC",
+      "description": "Minim eiusmod mollit culpa aute aute sint. Ullamco officia voluptate labore amet labore nostrud laborum veniam eu laborum proident id. Proident irure tempor veniam velit consequat cupidatat reprehenderit aliqua magna amet est amet. Mollit non nulla dolore culpa dolore ex consequat. Labore nostrud id consequat sit qui. In nulla sit reprehenderit officia voluptate do reprehenderit commodo magna laboris. Laborum qui non sint velit eu.\r\n",
+      "priceRsd": 683.41,
+      "tags": [
+        "ad",
+        "nisi",
+        "non",
+        "elit",
+        "elit",
+        "deserunt",
+        "adipisicing"
+      ]
+    },
+    {
+      "_id": 9,
+      "name": "velit ex",
+      "brand": "IMANT",
+      "description": "Anim in ea incididunt culpa magna dolore magna id aliquip ullamco sunt. Ut quis excepteur eu officia Lorem. Incididunt elit est in laborum elit est id velit. Sunt labore reprehenderit et ipsum commodo adipisicing. Cupidatat in commodo fugiat anim deserunt in nulla. Excepteur est commodo irure ullamco aliquip cupidatat Lorem laborum elit officia laborum ea. Sunt Lorem officia eiusmod sunt adipisicing non cillum exercitation.\r\n",
+      "priceRsd": 205.38,
+      "tags": [
+        "Lorem",
+        "incididunt",
+        "tempor",
+        "sint",
+        "proident"
+      ]
+    },
+    {
+      "_id": 10,
+      "name": "enim incididunt",
+      "brand": "SPHERIX",
+      "description": "Cillum sint minim nisi dolore quis aliqua ea dolore do consequat eiusmod magna aute. Ad commodo non est quis sint ad aliqua magna excepteur excepteur nisi. Adipisicing nostrud ex et cillum laborum sint dolore anim dolore ipsum ea. Minim laborum do proident sint cillum minim cupidatat magna ad aute.\r\n",
+      "priceRsd": 387.11,
+      "tags": [
+        "labore",
+        "amet",
+        "labore",
+        "commodo",
+        "elit"
+      ]
+    },
+    {
+      "_id": 11,
+      "name": "proident ea",
+      "brand": "ZILLATIDE",
+      "description": "In qui dolore in proident Lorem Lorem eiusmod aute. Esse elit cillum laborum duis aute occaecat aute excepteur sit. Qui do fugiat elit Lorem excepteur consectetur commodo enim. Duis non dolor dolore ad.\r\n",
+      "priceRsd": 898.13,
+      "tags": [
+        "sit",
+        "dolor",
+        "pariatur",
+        "incididunt",
+        "laborum",
+        "tempor",
+        "dolor"
+      ]
+    },
+    {
+      "_id": 12,
+      "name": "nisi enim",
+      "brand": "ZILLADYNE",
+      "description": "Id deserunt officia fugiat eiusmod aliqua consequat cillum ex aute exercitation consequat cillum sint ad. Exercitation aliqua aute est mollit proident amet amet id deserunt enim proident do consectetur. Mollit proident exercitation veniam amet sit esse dolor magna ullamco elit. Sint magna veniam quis fugiat officia eu Lorem laborum duis elit aliqua dolor pariatur. Eiusmod sunt non velit id magna.\r\n",
+      "priceRsd": 522.32,
+      "tags": [
+        "adipisicing",
+        "cillum",
+        "qui",
+        "officia",
+        "sint",
+        "in",
+        "fugiat"
+      ]
+    },
+    {
+      "_id": 13,
+      "name": "et deserunt",
+      "brand": "PORTALIS",
+      "description": "Deserunt ut velit esse cillum sunt incididunt quis elit commodo duis aute dolor do. Amet Lorem deserunt anim consequat. Elit labore minim nulla dolor. Sit dolor do eu sunt. Exercitation ea labore commodo mollit eiusmod magna et. Ullamco do irure sunt tempor deserunt mollit commodo consequat aliqua officia sint qui adipisicing exercitation.\r\n",
+      "priceRsd": 298.25,
+      "tags": [
+        "dolore",
+        "deserunt",
+        "ex",
+        "sunt"
+      ]
+    },
+    {
+      "_id": 14,
+      "name": "esse veniam",
+      "brand": "FLEXIGEN",
+      "description": "Commodo amet adipisicing reprehenderit ex aliqua deserunt deserunt occaecat Lorem mollit ullamco mollit amet. In officia tempor aute labore aute tempor consequat ea ex nisi. Nisi nulla commodo aliqua esse magna ullamco nostrud et elit do. Excepteur laboris dolor aute ut sit incididunt enim ex do deserunt in culpa occaecat in. Ex mollit labore cupidatat quis est occaecat minim nulla veniam.\r\n",
+      "priceRsd": 244.53,
+      "tags": [
+        "est",
+        "Lorem",
+        "deserunt"
+      ]
+    },
+    {
+      "_id": 15,
+      "name": "nostrud sit",
+      "brand": "KIDGREASE",
+      "description": "Veniam do exercitation exercitation aute id veniam cillum do cupidatat eiusmod fugiat. Consectetur est nisi aliquip sunt velit sint consequat laboris aliquip dolore reprehenderit minim eu est. Eiusmod veniam non eiusmod eu. Elit id qui elit sunt eu.\r\n",
+      "priceRsd": 524.28,
+      "tags": [
+        "et",
+        "in",
+        "esse"
+      ]
+    },
+    {
+      "_id": 16,
+      "name": "cupidatat adipisicing",
+      "brand": "TERSANKI",
+      "description": "Ex deserunt eu tempor aute nisi. Velit nulla enim do dolor dolore irure minim nisi do nostrud nostrud occaecat. Lorem nisi minim Lorem dolore.\r\n",
+      "priceRsd": 333.87,
+      "tags": [
+        "veniam",
+        "et",
+        "non",
+        "cillum",
+        "eu",
+        "fugiat",
+        "eiusmod"
+      ]
+    },
+    {
+      "_id": 17,
+      "name": "qui irure",
+      "brand": "SECURIA",
+      "description": "Aliquip anim ex occaecat cupidatat nostrud cillum reprehenderit commodo nulla minim. Fugiat ad nulla Lorem id excepteur consectetur aute sit aute. Deserunt non eiusmod occaecat culpa labore Lorem nisi amet consectetur et. Consequat enim nostrud laborum non velit magna proident mollit. Voluptate tempor consectetur consequat culpa dolore pariatur.\r\n",
+      "priceRsd": 536.44,
+      "tags": [
+        "aliqua",
+        "ullamco",
+        "consectetur",
+        "duis",
+        "et"
+      ]
+    },
+    {
+      "_id": 18,
+      "name": "reprehenderit aliquip",
+      "brand": "MAGNINA",
+      "description": "Velit veniam sunt fugiat commodo. Duis eu consequat commodo ad labore nulla est excepteur mollit incididunt in dolor velit laboris. Officia adipisicing culpa ullamco est aliquip magna tempor. Laborum anim do excepteur dolore laborum incididunt nostrud proident fugiat ipsum. Dolore sunt proident dolor adipisicing est. Culpa enim sunt excepteur labore ullamco eiusmod.\r\n",
+      "priceRsd": 796.82,
+      "tags": [
+        "labore",
+        "pariatur",
+        "proident",
+        "ipsum"
+      ]
+    },
+    {
+      "_id": 19,
+      "name": "laborum pariatur",
+      "brand": "KATAKANA",
+      "description": "Ea do culpa cillum laborum aliquip. Proident fugiat aliquip sunt occaecat sit consectetur minim elit. Ipsum esse ullamco consequat aute velit laborum occaecat eiusmod reprehenderit elit do excepteur. Tempor mollit tempor ea enim aute eu minim minim sint. Excepteur eu sint Lorem minim excepteur non ad quis et cillum tempor mollit ad. Aliqua nulla laboris aute in eiusmod quis cupidatat. Commodo dolor ipsum minim incididunt aliquip eiusmod.\r\n",
+      "priceRsd": 280.56,
+      "tags": [
+        "cillum",
+        "culpa",
+        "dolore",
+        "ex",
+        "ea",
+        "excepteur",
+        "commodo"
+      ]
+    },
+    {
+      "_id": 20,
+      "name": "mollit labore",
+      "brand": "KANGLE",
+      "description": "Nulla ea deserunt consectetur sint esse cillum ad cupidatat ex aliquip magna ad nostrud. Eiusmod do qui Lorem non ipsum id non fugiat eiusmod reprehenderit. Lorem magna esse in reprehenderit amet.\r\n",
+      "priceRsd": 187.2,
+      "tags": [
+        "veniam",
+        "ut",
+        "aliquip",
+        "est",
+        "nostrud",
+        "amet"
+      ]
+    },
+    {
+      "_id": 21,
+      "name": "dolore amet",
+      "brand": "XEREX",
+      "description": "Nulla cillum voluptate sint esse Lorem. Cupidatat labore laboris occaecat anim incididunt laboris velit enim ullamco. Ea et est commodo laborum ut ex Lorem sunt aute dolore commodo aute sint aliqua. Sint amet laboris Lorem minim elit reprehenderit dolore id cupidatat enim commodo quis. Duis consectetur sit labore sint id cupidatat officia nulla ut quis officia. Cupidatat veniam nostrud eiusmod anim proident id pariatur ipsum reprehenderit nulla laboris fugiat fugiat labore.\r\n",
+      "priceRsd": 797.88,
+      "tags": [
+        "adipisicing",
+        "ut",
+        "tempor",
+        "est",
+        "elit"
+      ]
+    },
+    {
+      "_id": 22,
+      "name": "ipsum minim",
+      "brand": "JUNIPOOR",
+      "description": "Tempor dolore dolor excepteur consequat deserunt ad anim consectetur ipsum veniam enim nulla. Eu aliqua eiusmod id consectetur quis aliqua. Cupidatat cupidatat culpa occaecat dolore labore fugiat sunt anim consectetur minim qui esse et. Ipsum anim est mollit anim aliquip do qui ullamco in consectetur quis. Sunt magna pariatur sunt pariatur labore veniam anim velit laborum. Ad irure elit amet aliqua laborum amet aliquip amet adipisicing irure est sunt culpa deserunt.\r\n",
+      "priceRsd": 9.97,
+      "tags": [
+        "sint",
+        "sit",
+        "aliquip",
+        "irure",
+        "deserunt",
+        "qui",
+        "Lorem"
+      ]
+    },
+    {
+      "_id": 23,
+      "name": "incididunt ut",
+      "brand": "SCENTY",
+      "description": "Commodo labore adipisicing pariatur incididunt consectetur voluptate non quis duis. Sint dolore esse eu eiusmod sunt sunt ut elit sint excepteur et. Reprehenderit ad veniam ipsum aute fugiat veniam duis duis amet in non sit reprehenderit culpa.\r\n",
+      "priceRsd": 232.61,
+      "tags": [
+        "quis",
+        "sunt",
+        "aute",
+        "id",
+        "in",
+        "nisi",
+        "ut"
+      ]
+    },
+    {
+      "_id": 24,
+      "name": "cupidatat aute",
+      "brand": "KINETICA",
+      "description": "Ex occaecat quis ullamco fugiat. Veniam elit veniam minim qui consectetur sunt laborum fugiat et deserunt labore est eu minim. Veniam excepteur anim nisi sint nisi nisi velit nostrud et sint cillum veniam pariatur. Laboris esse sit occaecat laborum nisi. Pariatur enim labore elit sit.\r\n",
+      "priceRsd": 794.83,
+      "tags": [
+        "ut",
+        "veniam",
+        "labore",
+        "tempor"
+      ]
+    },
+    {
+      "_id": 25,
+      "name": "labore culpa",
+      "brand": "SENMAO",
+      "description": "Ipsum elit sit cupidatat exercitation eu culpa in cillum amet. Laboris nisi elit tempor esse anim. Aute tempor et id exercitation. Velit ut eu culpa nisi ut. Exercitation aliqua velit cillum ad ea. Nulla laboris irure veniam ex officia cillum commodo culpa. Eu excepteur voluptate velit adipisicing enim consectetur ea.\r\n",
+      "priceRsd": 36.14,
+      "tags": [
+        "velit",
+        "anim",
+        "culpa",
+        "ea"
+      ]
+    },
+    {
+      "_id": 26,
+      "name": "Lorem fugiat",
+      "brand": "GYNK",
+      "description": "Cillum adipisicing occaecat amet incididunt do aute pariatur commodo laboris. Amet qui ea non consectetur duis exercitation. Reprehenderit ea ea esse et laborum velit labore ex ea ullamco adipisicing pariatur eiusmod. Velit veniam irure aliqua eiusmod nisi consequat laboris commodo in irure incididunt sunt. Nostrud culpa sit magna nostrud officia reprehenderit elit. Quis sint labore enim irure officia dolor labore tempor cillum.\r\n",
+      "priceRsd": 947.4,
+      "tags": [
+        "pariatur",
+        "nisi",
+        "anim",
+        "incididunt",
+        "sit",
+        "non",
+        "magna"
+      ]
+    },
+    {
+      "_id": 27,
+      "name": "elit incididunt",
+      "brand": "BOILCAT",
+      "description": "Irure irure aliquip in nostrud adipisicing ea dolore occaecat eiusmod nisi do consequat ullamco occaecat. Adipisicing esse Lorem enim ea. Proident mollit incididunt incididunt veniam culpa. Et nisi cillum ea ullamco dolore in ut occaecat.\r\n",
+      "priceRsd": 437.26,
+      "tags": [
+        "esse",
+        "ad",
+        "duis",
+        "ipsum",
+        "ex",
+        "proident",
+        "eu"
+      ]
+    }
+  ]
