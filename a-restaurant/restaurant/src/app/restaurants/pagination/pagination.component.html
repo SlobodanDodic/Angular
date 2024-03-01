@@ -1,0 +1,2 @@
+<button [disabled]="page < 2" class="btn btn-primary" (click)="onClick(page-1)">Prev</button>
+<button [disabled]="page*pageSize >= collectionSize" class="btn btn-primary" (click)="onClick(page+1)">Next</button>

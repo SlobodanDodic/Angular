@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col-2">
+    Price Range
+  </div>
+  <div class="col-5">
+    <input type="number" class="form-control" [formControl]="priceFromControl" (input)="onPriceChange()">
+  </div>
+  <div class="col-5">
+    <input type="number" class="form-control" [formControl]="priceToControl" (input)="onPriceChange()">
+  </div>
+</div>

@@ -1,9 +1,9 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
-import { RestaurantList } from '../model/restaurant';
+import { RestaurantList } from '../model/restaurant.model';
 
-const baseURL = 'http://localhost:3000/api';
+const baseURL = 'http://localhost:3000/api/restaurants';
 
 @Injectable({
   providedIn: 'root',
@@ -26,7 +26,7 @@ export class RestaurantService {
       };
     }
 
-    return this.http.get(`${baseURL}/restaurants`, options).pipe(
+    return this.http.get(baseURL, options).pipe(
       map((data: any) => {
         return new RestaurantList(data);
       })
