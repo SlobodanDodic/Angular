@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: "customers", component: CustomersComponent },
   { path: "products", component: ProductsComponent },
   { path: "people", component: PeopleComponent },
-  { path: "", redirectTo: "/home", pathMatch: "full" },
+  { path: "", redirectTo: "/", pathMatch: "full" },
 ];
 
 @NgModule({

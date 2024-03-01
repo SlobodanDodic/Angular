@@ -1,41 +1,67 @@
 import { Component, OnInit } from '@angular/core';
+import { PersonService } from '../services/person.service';
+import { Person } from '../model/person.model';
+
+const baseURL = 'http://localhost:3000/api/people';
 
 @Component({
   selector: 'app-people',
   templateUrl: './people.component.html',
-  styleUrls: ['./people.component.css']
+  styleUrls: ['./people.component.css'],
 })
-export class PeopleComponent implements OnInit { 
+export class PeopleComponent implements OnInit {
+  persons: Array<Person> = [];
 
-  constructor() { }
+  queryParams = {
+    id: 0,
+    page: 3,
+    pageSize: 4,
+    filter: {
+      idActive: true,
+    },
+  };
 
-  ngOnInit(): void {
+  constructor(private personService: PersonService) {}
 
-  }
+  ngOnInit(): void {}
 
-  
   getAll() {
-    // Domaci 1
-    // get all people
-    // console log result
+    this.personService.getAll().subscribe({
+      next: (persons: Array<Person>) => {
+        console.log(persons);
+        this.persons = persons;
+      },
+      error: (err) => console.log(err),
+    });
   }
 
   getSorted() {
-    // Domaci 2
-    // get people sorted by _id, descending
-    // console log result
+    this.personService.getSorted(this.queryParams).subscribe({
+      next: (persons: Array<Person>) => {
+        this.persons = persons;
+        console.log(persons);
+      },
+      error: (err) => console.log(err),
+    });
   }
 
   getFiltered() {
-    // Domaci 2
-    // get people filtered by idActive
-    // console log result
+    this.personService.getFiltered(this.queryParams).subscribe({
+      next: (persons: Array<Person>) => {
+        console.log(persons);
+        this.persons = persons;
+      },
+      error: (err) => console.log(err),
+    });
   }
 
   getPage() {
-    // Domaci 2
-    // get third page of people, page size 4
-    // console log result
+    this.personService.getPage(this.queryParams).subscribe({
+      next: (persons: Array<Person>) => {
+        console.log(persons);
+        this.persons = persons;
+      },
+      error: (err) => console.log(err),
+    });
   }
-
 }
