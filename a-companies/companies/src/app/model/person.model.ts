@@ -10,12 +10,6 @@ export class PersonList {
         obj.results.map((elem: any) => new Person(elem))) ||
       [];
   }
-
-  // filter(idActive: boolean): void {
-  //   this.results = this.results.filter(
-  //     (person: any) => person.isActive === idActive
-  //   );
-  // }
 }
 
 export class Person {

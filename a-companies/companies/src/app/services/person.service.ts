@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { Person, PersonList } from '../model/person.model';
 
-// const baseURL = 'http://localhost:3000/api/person';
 const baseURL = 'http://localhost:3000/api/v2/person';
 
 @Injectable({
@@ -30,24 +29,6 @@ export class PersonService {
       })
     );
   }
-
-  // getFiltered(params?: any): Observable<PersonList> {
-  //   let options = {};
-  //   if (params) {
-  //     options = {
-  //       params: new HttpParams().set(
-  //         'filter',
-  //         (params.filter && JSON.stringify(params.filter)) || ''
-  //       ),
-  //     };
-  //   }
-
-  //   return this.http.get(baseURL, options).pipe(
-  //     map((data: any) => {
-  //       return data;
-  //     })
-  //   );
-  // }
 
   getFiltered(params?: any): Observable<PersonList> {
     return this.http.get(baseURL).pipe(

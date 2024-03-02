@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PersonService } from '../services/person.service';
-import { Person, PersonList } from '../model/person.model';
-
-const baseURL = 'http://localhost:3000/api/people';
+import { PersonList } from '../model/person.model';
 
 @Component({
   selector: 'app-people',
