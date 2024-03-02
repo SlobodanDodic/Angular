@@ -1,41 +1,65 @@
 import { Component, OnInit } from '@angular/core';
+import { CustomerList } from '../model/customer.model';
+import { CustomerService } from '../services/customer.service';
 
 @Component({
   selector: 'app-customers',
   templateUrl: './customers.component.html',
-  styleUrls: ['./customers.component.css']
+  styleUrls: ['./customers.component.css'],
 })
 export class CustomersComponent implements OnInit {
+  customers: CustomerList = new CustomerList();
 
-  constructor() { }
+  queryParams = {
+    company: '',
+    page: 2,
+    pageSize: 9,
+    filter: {
+      name: 'Luna',
+    },
+  };
 
-  ngOnInit(): void {
+  constructor(private customerService: CustomerService) {}
 
-  }
+  ngOnInit(): void {}
 
-  
   getAll() {
-    // Domaci 1
-    // get all customers
-    // console log result
+    this.customerService.getAll().subscribe({
+      next: (customers: CustomerList) => {
+        console.log(customers);
+        this.customers = customers;
+      },
+      error: (err) => console.log(err),
+    });
   }
 
   getSorted() {
-    // Domaci 2
-    // get customers sorted by company
-    // console log result
+    this.customerService.getSorted().subscribe({
+      next: (customers: CustomerList) => {
+        this.customers = customers;
+        console.log(customers);
+      },
+      error: (err) => console.log(err),
+    });
   }
 
   getFiltered() {
-    // Domaci 2
-    // get customers filtered by name
-    // console log result
+    this.customerService.getFiltered(this.queryParams).subscribe({
+      next: (customers: CustomerList) => {
+        this.customers = customers;
+        console.log(customers);
+      },
+      error: (err) => console.log(err),
+    });
   }
 
   getPage() {
-    // Domaci 2
-    // get second page of customers, page size 9
-    // console log result
+    this.customerService.getPage(this.queryParams).subscribe({
+      next: (customers: CustomerList) => {
+        console.log(customers);
+        this.customers = customers;
+      },
+      error: (err) => console.log(err),
+    });
   }
-
 }

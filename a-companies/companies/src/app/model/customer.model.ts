@@ -1,3 +1,17 @@
+export class CustomerList {
+  count: number;
+  results: Customer[];
+
+  constructor(obj?: any) {
+    this.count = (obj && obj.count) || 0;
+    this.results =
+      (obj &&
+        obj.results &&
+        obj.results.map((elem: any) => new Customer(elem))) ||
+      [];
+  }
+}
+
 export class Customer {
   _id: number;
   isActive: boolean;
