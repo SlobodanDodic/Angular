@@ -1,3 +1,17 @@
+export class ProductList {
+  count: number;
+  results: Product[];
+
+  constructor(obj?: any) {
+    this.count = (obj && obj.count) || 0;
+    this.results =
+      (obj &&
+        obj.results &&
+        obj.results.map((elem: any) => new Product(elem))) ||
+      [];
+  }
+}
+
 export class Product {
   _id: number;
   name: string;

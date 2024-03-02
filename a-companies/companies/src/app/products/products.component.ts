@@ -1,42 +1,65 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductList } from '../model/product.model';
+import { ProductService } from '../services/product.service';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css']
+  styleUrls: ['./products.component.css'],
 })
 export class ProductsComponent implements OnInit {
+  products: ProductList = new ProductList();
 
-  constructor() { }
+  queryParams = {
+    priceRsd: 0,
+    page: 1,
+    pageSize: 10,
+    filter: {
+      brand: 'KATAKANA',
+    },
+  };
 
-  ngOnInit(): void {
+  constructor(private productService: ProductService) {}
 
-  }
+  ngOnInit(): void {}
 
-  
   getAll() {
-    // Domaci 1
-    // get all products
-    // console log result
+    this.productService.getAll().subscribe({
+      next: (products: ProductList) => {
+        console.log(products);
+        this.products = products;
+      },
+      error: (err) => console.log(err),
+    });
   }
 
   getSorted() {
-    // Domaci 2
-    // get products sorted by priceRsd
-    // console log result
+    this.productService.getSorted(this.queryParams).subscribe({
+      next: (products: ProductList) => {
+        this.products = products;
+        console.log(products);
+      },
+      error: (err) => console.log(err),
+    });
   }
 
   getFiltered() {
-    // Domaci 2
-    // get products filtered by brand
-    // console log result
+    this.productService.getFiltered(this.queryParams).subscribe({
+      next: (products: ProductList) => {
+        this.products = products;
+        console.log(products);
+      },
+      error: (err) => console.log(err),
+    });
   }
 
   getPage() {
-    // Domaci 2
-    // get first page of products, page size 10
-    // console log result
+    this.productService.getPage(this.queryParams).subscribe({
+      next: (products: ProductList) => {
+        console.log(products);
+        this.products = products;
+      },
+      error: (err) => console.log(err),
+    });
   }
-
-
 }
