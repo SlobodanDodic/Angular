@@ -1,3 +1,17 @@
+export class CompanyList {
+  count: number;
+  results: Company[];
+
+  constructor(obj?: any) {
+    this.count = (obj && obj.count) || 0;
+    this.results =
+      (obj &&
+        obj.results &&
+        obj.results.map((elem: any) => new Company(elem))) ||
+      [];
+  }
+}
+
 export class Company {
   _id: string;
   name: string;
