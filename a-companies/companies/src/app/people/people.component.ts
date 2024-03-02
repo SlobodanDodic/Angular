@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PersonService } from '../services/person.service';
-import { Person } from '../model/person.model';
+import { Person, PersonList } from '../model/person.model';
 
 const baseURL = 'http://localhost:3000/api/people';
 
@@ -10,7 +10,7 @@ const baseURL = 'http://localhost:3000/api/people';
   styleUrls: ['./people.component.css'],
 })
 export class PeopleComponent implements OnInit {
-  persons: Array<Person> = [];
+  persons: PersonList = new PersonList();
 
   queryParams = {
     id: 0,
@@ -27,7 +27,7 @@ export class PeopleComponent implements OnInit {
 
   getAll() {
     this.personService.getAll().subscribe({
-      next: (persons: Array<Person>) => {
+      next: (persons: PersonList) => {
         console.log(persons);
         this.persons = persons;
       },
@@ -37,7 +37,7 @@ export class PeopleComponent implements OnInit {
 
   getSorted() {
     this.personService.getSorted(this.queryParams).subscribe({
-      next: (persons: Array<Person>) => {
+      next: (persons: PersonList) => {
         this.persons = persons;
         console.log(persons);
       },
@@ -47,9 +47,9 @@ export class PeopleComponent implements OnInit {
 
   getFiltered() {
     this.personService.getFiltered(this.queryParams).subscribe({
-      next: (persons: Array<Person>) => {
-        console.log(persons);
+      next: (persons: PersonList) => {
         this.persons = persons;
+        console.log(persons);
       },
       error: (err) => console.log(err),
     });
@@ -57,7 +57,7 @@ export class PeopleComponent implements OnInit {
 
   getPage() {
     this.personService.getPage(this.queryParams).subscribe({
-      next: (persons: Array<Person>) => {
+      next: (persons: PersonList) => {
         console.log(persons);
         this.persons = persons;
       },
