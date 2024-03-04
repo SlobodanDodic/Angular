@@ -1,0 +1,6 @@
+.exibition {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
