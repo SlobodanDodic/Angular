@@ -14,6 +14,8 @@ export class CompaniesComponent implements OnInit {
     name: '',
     page: 1,
     pageSize: 7,
+    sort: 'name',
+    sortDirection: 'asc',
     filter: {
       address: 'Street',
     },
@@ -34,7 +36,7 @@ export class CompaniesComponent implements OnInit {
   }
 
   getSorted() {
-    this.companyService.getSorted().subscribe({
+    this.companyService.getSorted(this.queryParams).subscribe({
       next: (companies: CompanyList) => {
         this.companies = companies;
         console.log(companies);

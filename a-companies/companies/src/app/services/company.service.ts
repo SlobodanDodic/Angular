@@ -19,13 +19,38 @@ export class CompanyService {
     );
   }
 
-  getSorted(): Observable<CompanyList> {
-    return this.http.get(baseURL).pipe(
+  // getSorted(): Observable<CompanyList> {
+  //   return this.http.get(baseURL).pipe(
+  //     map((data: any) => {
+  //       const sortedData = data.results.sort((a: Company, b: Company) => {
+  //         return a.name.localeCompare(b.name);
+  //       });
+  //       return new CompanyList({ count: data.count, results: sortedData });
+  //     })
+  //   );
+  // }
+
+  getSorted(params?: any): Observable<CompanyList> {
+    let options = {};
+    if (params) {
+      // Kreiranje novih HttpParams objekata
+      let httpParams = new HttpParams();
+
+      // Postavljanje sortiranja ako su prosleđeni u params
+      if (params.sort) {
+        httpParams = httpParams.set('sort', params.sort);
+      }
+      if (params.sortDirection) {
+        httpParams = httpParams.set('sortDirection', params.sortDirection);
+      }
+
+      // Postavljanje HttpParams objekta u options zahteva
+      options = { params: httpParams };
+    }
+
+    return this.http.get(baseURL, options).pipe(
       map((data: any) => {
-        const sortedData = data.results.sort((a: Company, b: Company) => {
-          return a.name.localeCompare(b.name);
-        });
-        return new CompanyList({ count: data.count, results: sortedData });
+        return new CompanyList(data);
       })
     );
   }
