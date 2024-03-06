@@ -1,3 +1,5 @@
-<div *ngFor="let exibition of exibitions" class="d-flex">
-  <app-exibition-item [exibition]="exibition" class="w-100" [btn]="false"></app-exibition-item>
+<div class="row" *ngFor="let exibition of exibitions">
+    <div class="col-8 offset-2">
+        <app-exibition-item [exibition]="exibition"></app-exibition-item>
+    </div>
 </div>
