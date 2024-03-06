@@ -15,6 +15,7 @@ import { ExibitionDetailsComponent } from './exibitions/exibition-details/exibit
 import { ReactiveFormsModule } from '@angular/forms';
 import { ArtworkItemComponent } from './exibitions/exibition-details/artwork-item/artwork-item.component';
 import { ExibitionEditComponent } from './exibitions/exibition-details/exibition-edit/exibition-edit.component';
+import { ArtworkOffcanvasComponent } from './exibitions/exibition-details/artwork-item/artwork-offcanvas/artwork-offcanvas.component';
 
 @NgModule({
   declarations: [
@@ -28,15 +29,16 @@ import { ExibitionEditComponent } from './exibitions/exibition-details/exibition
     ExibitionDetailsComponent,
     ArtworkItemComponent,
     ExibitionEditComponent,
+    ArtworkOffcanvasComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

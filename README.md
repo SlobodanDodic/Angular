@@ -14,7 +14,7 @@ _**Angular CLI:** 16.2.7🔺 **Node:** 18.19.0🔺 **Package Manager:** npm 9.8.
 
 > ▶ **Install bootstrap** 👉 npm install bootstrap
 
-> ▶ **Install ng-bootstrap** 👉 ng add @ng-bootstrap/ng-bootstrap
+> ▶ **Install ng bootstrap** 👉 ng add @ng-bootstrap/ng-bootstrap
 
 > ▶ **Add to angular.json in styles** 👉 "node_modules/bootstrap/dist/css/bootstrap.css"
 

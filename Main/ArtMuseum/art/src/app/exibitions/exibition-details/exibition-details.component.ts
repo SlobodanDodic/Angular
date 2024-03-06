@@ -7,10 +7,9 @@ import { ExibitionService } from 'src/app/services/exibition.service';
 @Component({
   selector: 'app-exibition-details',
   templateUrl: './exibition-details.component.html',
-  styleUrls: ['./exibition-details.component.css']
+  styleUrls: ['./exibition-details.component.css'],
 })
 export class ExibitionDetailsComponent implements OnInit {
-
   exibitionId: number = 0;
   exibition: Exibition = new Exibition();
   artworks: Artwork[] = [];
@@ -19,21 +18,21 @@ export class ExibitionDetailsComponent implements OnInit {
   showEdit: boolean = false;
 
   artworkFilter = {
-    author: ""
-  }
+    author: '',
+  };
 
   constructor(
     private route: ActivatedRoute,
     private service: ExibitionService
-    ) {}
+  ) {}
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
-      this.exibitionId = params['id']
+      this.exibitionId = params['id'];
       this.getExibition();
       this.getExibitionArtworks();
       this.getAllArtworks();
-    })
+    });
   }
 
   getExibition(): void {
@@ -41,26 +40,34 @@ export class ExibitionDetailsComponent implements OnInit {
       next: (exibition: Exibition) => {
         this.exibition = exibition;
       },
-      error: (err: any) => {console.log(err)}
-    })
+      error: (err: any) => {
+        console.log(err);
+      },
+    });
   }
 
   getExibitionArtworks(): void {
     this.service.getExibitionArtworks(this.exibitionId).subscribe({
       next: (artworks: Artwork[]) => {
-        this.artworks = artworks
+        this.artworks = artworks;
       },
-      error: (err: any) => {console.log(err)}
-    })
+      error: (err: any) => {
+        console.log(err);
+      },
+    });
   }
 
   getAllArtworks(): void {
     this.service.getArtworks(this.artworkFilter).subscribe({
       next: (artworks: Artwork[]) => {
-        this.allArtworks = artworks.filter((artwork: Artwork) => artwork.exibition_id == -1)
+        this.allArtworks = artworks.filter(
+          (artwork: Artwork) => artwork.exibition_id == -1
+        );
       },
-      error: (err: any) => {console.log(err)}
-    })
+      error: (err: any) => {
+        console.log(err);
+      },
+    });
   }
 
   onAddArtwork(artworkId: number): void {
@@ -69,19 +76,24 @@ export class ExibitionDetailsComponent implements OnInit {
         this.getAllArtworks();
         this.getExibitionArtworks();
       },
-      error: (err: any) => {console.log(err)}
-    })
+      error: (err: any) => {
+        console.log(err);
+      },
+    });
   }
 
   onRemoveArtwork(artworkId: number): void {
-    this.service.removeArtworkFromExibition(artworkId, this.exibitionId).subscribe({
-      next: () => {
-        this.getAllArtworks();
-        this.getExibitionArtworks();
-      },
-      error: (err: any) => {console.log(err)}
-    })
-
+    this.service
+      .removeArtworkFromExibition(artworkId, this.exibitionId)
+      .subscribe({
+        next: () => {
+          this.getAllArtworks();
+          this.getExibitionArtworks();
+        },
+        error: (err: any) => {
+          console.log(err);
+        },
+      });
   }
 
   onEditClicked(): void {
@@ -96,6 +108,4 @@ export class ExibitionDetailsComponent implements OnInit {
     this.artworkFilter.author = searchValue;
     this.getAllArtworks();
   }
-  
-
 }
