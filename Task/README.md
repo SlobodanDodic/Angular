@@ -1,6 +1,6 @@
 <div align="center">
 
-# ![Angular](ng.svg)
+# ![Angular](../ng.svg)
 
 _**Angular CLI:** 16.2.7🔺 **Node:** 18.19.0🔺 **Package Manager:** npm 9.8.1_
 
