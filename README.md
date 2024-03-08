@@ -10,6 +10,12 @@ _**Angular CLI:** 16.2.7🔺 **Node:** 18.19.0🔺 **Package Manager:** npm 9.8.
 
 </div>
 
+> ▶ **remove any existing files from the repo, skipping over ones not in repo**
+
+    👉 find . -name .DS_Store -print0 | xargs -0 git rm --ignore-unmatch
+
+⁂
+
 > ▶ **Create new project** 👉 ng new **project-name**
 
 > ▶ **Install bootstrap** 👉 npm install bootstrap
