@@ -1,0 +1,9 @@
+<div class="card" [routerLink]="['/exibitions', exibition._id]">
+  <div class="card-body">
+    <h5 class="card-title">{{exibition.title}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{exibition.location.site}}, {{exibition.location.room}}</h6>
+    <p class="card-text">{{exibition.description}}</p>
+
+    <button type="button" class="btn btn-dark float-end" *ngIf="showEdit" (click)="onEditClicked()">Edit</button>
+  </div>
+</div>
