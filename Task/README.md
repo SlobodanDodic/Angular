@@ -14,16 +14,12 @@ _**Angular CLI:** 16.2.7🔺 **Node:** 18.19.0🔺 **Package Manager:** npm 9.8.
 
 > ▶ **No2** 👉 ng add @ng-bootstrap/ng-bootstrap
 
-> ▶ **No3** 👉 detect static and dynamic components
+> ▶ **No3** 👉 create routes
 
-> ▶ **No4** 👉 create basic components in core folder
+> ▶ **No4** 👉 create models
 
-> ▶ **No5** 👉 create routes
+> ▶ **No5** 👉 create service: ng g s services/**service-name**
 
-> ▶ **No6** 👉 create models
+> ▶ **No6** 👉 import { HttpClientModule } from '@angular/common/http';
 
-> ▶ **No7** 👉 create service: ng g s services/**service-name**
-
-> ▶ **No8** 👉 import { HttpClientModule } from '@angular/common/http';
-
-> ▶ **No9** 👉 import { ReactiveFormsModule } from '@angular/forms';
+> ▶ **No7** 👉 import { ReactiveFormsModule } from '@angular/forms';
