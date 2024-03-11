@@ -1,0 +1,55 @@
+<div class="row align-items-center">
+  <div class="col-4">
+    <div class="row align-items-center">
+      <div class="col-4">
+        <label for="form-select">Category</label>
+      </div>
+      <div class="col-8">
+        <select class="form-select" name="filterCategory" (change)="getPets()" [(ngModel)]="params.filter.category">
+          <option value="">All</option>
+          <option *ngFor="let category of categories" [value]="category">
+            {{category}}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-5">
+    <p class="d-inline">Sex:</p>
+    <div class="form-check form-check-inline px-3">
+      <input class="form-check-input ms-0 me-1" name="inlineRadioOptions" type="radio" id="any" value=""
+        [(ngModel)]="params.filter.sex" (change)="getPets()">
+      <label class="form-check-label" for="any">Any</label>
+    </div>
+    <div class="form-check form-check-inline px-0">
+      <input class="form-check-input ms-0 me-1" name="inlineRadioOptions" type="radio" id="female" value="f"
+        [(ngModel)]="params.filter.sex" (change)="getPets()">
+      <label class="form-check-label" for="female">Female</label>
+    </div>
+    <div class="form-check form-check-inline px-0">
+      <input class="form-check-input ms-0 me-1" name="inlineRadioOptions" type="radio" id="male" value="m"
+        [(ngModel)]="params.filter.sex" (change)="getPets()">
+      <label class="form-check-label" for="male">Male</label>
+    </div>
+  </div>
+
+  <div class="col-3">
+    <div class="row align-items-center">
+      <div class="col-4">
+        <label for="form-select">SortBy</label>
+      </div>
+      <div class="col-8">
+        <select class="form-select" name="sort" [(ngModel)]="params.sort" (change)="getPets()">
+          <option value="">--</option>
+          <option value="name">Name</option>
+          <option value="size_kg">Size</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="row align-items-center mt-5">
+    <div class="col-3" *ngFor="let pet of petList.results">
+      <app-pet class="item" [pet]="pet" [routerLink]="[pet._id]"></app-pet>
+    </div>
+  </div>

@@ -1,0 +1,9 @@
+.row,
+.col {
+  margin: 0;
+  padding: 0;
+}
+img {
+  width: 100vw;
+  height: 4rem;
+}

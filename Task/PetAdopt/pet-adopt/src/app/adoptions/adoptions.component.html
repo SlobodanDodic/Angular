@@ -1,0 +1,19 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Pet Id</th>
+      <th scope="col">Pet Name</th>
+      <th scope="col">Name</th>
+      <th scope="col">Contact</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let adoption of adoptions.results">
+      <th>{{adoption.petId}}</th>
+      <td>{{adoption.petName}}</td>
+      <td>{{adoption.name}}</td>
+      <td>{{adoption.contact}}</td>
+    </tr>
+  </tbody>
+</table>
