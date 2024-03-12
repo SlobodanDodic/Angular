@@ -1,0 +1,22 @@
+<form [formGroup]="form">
+  <p class="text-center fw-bold">Add new item</p>
+
+  <div class="form-group mb-2">
+    <label for="articleSelect" class="fw-bold">Article</label>
+    <select class="form-control" id="articleSelect" formControlName="article">
+      <option *ngFor="let article of articles.results" value="{{article.code}}">{{article.name}}</option>
+    </select>
+  </div>
+
+  <div class="form-group mb-2">
+    <label for="priceInput" class="fw-bold">Price</label>
+    <input type="number" class="form-control" id="priceInput" formControlName="price">
+  </div>
+
+  <div class="form-group mb-2">
+    <label for="quantityInput" class="fw-bold">Quantity</label>
+    <input type="number" class="form-control" id="quantityInput" formControlName="quantity">
+  </div>
+
+  <button type="button" class="btn btn-primary mt-2 w-auto" (click)="saveItem()">Save</button>
+</form>

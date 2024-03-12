@@ -1,0 +1,16 @@
+<div class="row bg-light py-2">
+  <div class="col">
+    <p>Transaction Type: {{doc.transactionType}}</p>
+    <p>Date of Creation: {{doc.dateOfCreation | date:"fullDate"}}</p>
+  </div>
+  <div class="col">
+    <p class="text-decoration-underline">Business Partner</p>
+    <p>{{doc.businessPartner.name}}</p>
+    <p>{{doc.businessPartner.city}}, {{doc.businessPartner.address}}</p>
+  </div>
+  <div class="col">
+    <p>Status: {{doc.status}}</p>
+    <button class="btn btn-primary btn-sm" (click)="updateDocument()">Record
+      Document</button>
+  </div>
+</div>

@@ -14,12 +14,12 @@ _**Angular CLI:** 16.2.7🔺 **Node:** 18.19.0🔺 **Package Manager:** npm 9.8.
 
 > ▶ **No2** 👉 ng add @ng-bootstrap/ng-bootstrap
 
-> ▶ **No3** 👉 create routes
+> ▶ **No3** 👉 import { HttpClientModule } from '@angular/common/http';
 
-> ▶ **No4** 👉 create models
+> ▶ **No4** 👉 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
-> ▶ **No5** 👉 create service: ng g s services/**service-name**
+> ▶ **No5** 👉 create routes
 
-> ▶ **No6** 👉 import { HttpClientModule } from '@angular/common/http';
+> ▶ **No6** 👉 create models
 
-> ▶ **No7** 👉 import { ReactiveFormsModule } from '@angular/forms';
+> ▶ **No7** 👉 create service: ng g s services/**service-name**

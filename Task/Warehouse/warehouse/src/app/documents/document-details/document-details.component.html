@@ -1,0 +1,11 @@
+<app-doc-status [doc]="doc" (docUpdated)="recordDocument($event)"></app-doc-status>
+
+<div class="row py-3">
+  <div class="col-8">
+    <app-doc-list [items]="items" [articles]="articles"></app-doc-list>
+  </div>
+
+  <div class="col-4">
+    <app-doc-form [articles]="articles" (itemAdded)="onSave($event)"></app-doc-form>
+  </div>
+</div>

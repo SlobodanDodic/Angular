@@ -1,0 +1,9 @@
+.btn-sm {
+  height: 37px;
+}
+
+thead tr th:hover,
+tbody tr:hover {
+  cursor: pointer;
+  background-color: #0000001b;
+}
