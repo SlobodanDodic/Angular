@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { RestaurantService } from '../services/restaurant.service';
+import { Restaurant, RestaurantList } from '../model/restaurant.model';
 import { ActivatedRoute, Params } from '@angular/router';
-import { RestaurantList } from 'src/app/model/restaurant';
-import { RestaurantService } from 'src/app/services/restaurant.service';
 
 @Component({
   selector: 'app-restaurants',
@@ -15,9 +15,9 @@ export class RestaurantsComponent implements OnInit {
     page: 1,
     pageSize: 9,
     filter: {
+      cuisine: '',
       priceFrom: 1,
       priceTo: 5,
-      cuisine: '',
     },
   };
 
@@ -34,7 +34,7 @@ export class RestaurantsComponent implements OnInit {
     });
   }
 
-  onPageChange(newPage: number): void {
+  onPageChanged(newPage: number) {
     this.queryParams.page = newPage;
     this.getRestaurants();
   }
@@ -48,6 +48,7 @@ export class RestaurantsComponent implements OnInit {
   getRestaurants(): void {
     this.service.getRestaurants(this.queryParams).subscribe({
       next: (restaurants: RestaurantList) => {
+        console.log(restaurants);
         this.restaurants = restaurants;
       },
       error: (err) => console.log(err),

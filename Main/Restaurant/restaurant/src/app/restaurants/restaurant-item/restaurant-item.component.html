@@ -1,19 +1,4 @@
-<h4>{{restaurant.name}}</h4>
-
-<div class="row">
-  <div class="col">
-    {{restaurant.description}}
-  </div>
-</div>
-
-<div class="row">
-  <div class="col">
-    Rating: {{restaurant.rating}}
-  </div>
-</div>
-
-<div class="row">
-  <div class="col">
-    Price: {{restaurant.price}}
-  </div>
-</div>
+<h4 (click)="openMenu()">{{restaurant.name}}</h4>
+<p>{{restaurant.description}}</p>
+<p>Rating: {{restaurant.rating}}</p>
+<p>Price: {{restaurant.price}}</p>

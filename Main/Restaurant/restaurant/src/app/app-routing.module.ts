@@ -5,15 +5,15 @@ import { AboutComponent } from './core/about/about.component';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'restaurants', component: RestaurantsComponent },
-  { path: 'restaurants/:cuisine', component: RestaurantsComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'prefix' },
+  { path: "home", component: HomeComponent },
+  { path: "about", component: AboutComponent },
+  { path: "restaurants", component: RestaurantsComponent },
+  { path: "restaurants/:cuisine", component: RestaurantsComponent },
+  { path: "", redirectTo: '/home', pathMatch: "prefix"},
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
