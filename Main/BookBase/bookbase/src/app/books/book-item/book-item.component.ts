@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Book } from 'src/app/model/book.model';
 
 @Component({
@@ -6,11 +6,7 @@ import { Book } from 'src/app/model/book.model';
   templateUrl: './book-item.component.html',
   styleUrls: ['./book-item.component.css'],
 })
-export class BookItemComponent implements OnInit {
+export class BookItemComponent {
   @Input() book: Book = new Book();
   @Input() score: number = -1;
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }

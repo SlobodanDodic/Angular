@@ -1,30 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Book } from 'src/app/model/book.model';
-import { BooksService } from 'src/app/services/books.service';
+import { BookService } from 'src/app/service/book.service';
+import { ToastService } from 'src/app/service/toast.service';
 
 @Component({
   selector: 'app-book-form',
   templateUrl: './book-form.component.html',
   styleUrls: ['./book-form.component.css'],
 })
-export class BookFormComponent implements OnInit {
+export class BookFormComponent {
   bookId: number = -1;
   book: Book = new Book();
 
-  form: FormGroup = new FormGroup({
-    ISBN: new FormControl('', Validators.required),
-    title: new FormControl('', Validators.required),
-    author: new FormControl('', Validators.required),
-    yearOfPublication: new FormControl(0),
-    publisher: new FormControl('', Validators.required),
+  bookForm: FormGroup = new FormGroup({
+    ISBN: new FormControl(this.book.ISBN, [Validators.required]),
+    title: new FormControl(this.book.title, [Validators.required]),
+    author: new FormControl(this.book.author, [Validators.required]),
+    yearOfPublication: new FormControl(this.book.yearOfPublication, [
+      Validators.required,
+    ]),
+    publisher: new FormControl(this.book.publisher, [Validators.required]),
   });
 
   constructor(
-    private service: BooksService,
+    private bookService: BookService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private toastService: ToastService
   ) {}
 
   ngOnInit(): void {
@@ -36,53 +40,72 @@ export class BookFormComponent implements OnInit {
     });
   }
 
-  onSubmit(): void {
-    if (!this.form.valid) {
-      alert('Please fill in all fields');
-      return;
-    }
-    let book = new Book(this.form.value);
-
-    if (this.bookId < 0) {
-      this.service.addBook(book).subscribe({
-        next: (newBook: Book) => {
-          this.router.navigate(['/books', newBook._id]);
-        },
-        error: (err) => {
-          console.log(err);
-        },
-      });
-    } else {
-      this.service.updateBook(this.bookId, book).subscribe({
-        next: (newBook: Book) => {
-          this.router.navigate(['/books', newBook._id]);
-        },
-        error: (err) => {
-          console.log(err);
-        },
-      });
-    }
-  }
-
   getBook(): void {
-    this.service.getBook(this.bookId).subscribe({
+    this.bookService.getBook(this.bookId).subscribe({
       next: (book: Book) => {
         this.book = book;
         this.setEditForm();
       },
-      error: (err) => {
-        console.log(err);
+      error: (err: any) => {
+        console.log('error: ', err);
+      },
+    });
+  }
+
+  onSubmit(): void {
+    if (!this.bookForm.valid) {
+      this.toastService.show('Please fill in all fields!', {
+        classname: 'bg-warning text-light',
+      });
+      return;
+    } else {
+      this.bookId < 0 ? this.addBook() : this.editBook();
+    }
+  }
+
+  addBook(): void {
+    const newBook: Book = new Book(this.bookForm.value);
+
+    this.bookService.addBook(newBook).subscribe({
+      next: (_data: any) => {
+        this.toastService.show('Book added successfully!', {
+          classname: 'bg-success text-light',
+        });
+        this.bookForm.reset();
+        this.router.navigate(['/books']);
+      },
+      error: (err: any) => {
+        console.log('error: ', err);
+      },
+    });
+  }
+
+  editBook(): void {
+    const newBook: Book = new Book(this.bookForm.value);
+    newBook._id = this.bookId;
+
+    this.bookService.editBook(this.bookId, newBook).subscribe({
+      next: (_data: any) => {
+        this.toastService.show('Book edited successfully!', {
+          classname: 'bg-success text-light',
+        });
+        this.router.navigate(['/books', this.bookId]);
+      },
+      error: (err: any) => {
+        console.log('error: ', err);
       },
     });
   }
 
   setEditForm(): void {
-    this.form = new FormGroup({
-      ISBN: new FormControl(this.book.ISBN, Validators.required),
-      title: new FormControl(this.book.title, Validators.required),
-      author: new FormControl(this.book.author, Validators.required),
-      yearOfPublication: new FormControl(this.book.yearOfPublication),
-      publisher: new FormControl(this.book.publisher, Validators.required),
+    this.bookForm = new FormGroup({
+      ISBN: new FormControl(this.book.ISBN, [Validators.required]),
+      title: new FormControl(this.book.title, [Validators.required]),
+      author: new FormControl(this.book.author, [Validators.required]),
+      yearOfPublication: new FormControl(this.book.yearOfPublication, [
+        Validators.required,
+      ]),
+      publisher: new FormControl(this.book.publisher, [Validators.required]),
     });
   }
 }

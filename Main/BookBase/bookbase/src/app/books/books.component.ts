@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { BooksService } from '../services/books.service';
 import { Books } from '../model/book.model';
+import { BookService } from '../service/book.service';
+import { ActivatedRoute } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
@@ -10,8 +11,9 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class BooksComponent implements OnInit {
   books: Books = new Books();
+  ingredients: string[] = [];
 
-  queryParams = {
+  params = {
     page: 1,
     pageSize: 10,
     filter: {
@@ -20,45 +22,36 @@ export class BooksComponent implements OnInit {
     },
   };
 
-  // opcija 1:
   searchControl: FormControl = new FormControl('');
   radioFormGroup: FormGroup = new FormGroup({
     filter: new FormControl('title'),
   });
 
-  constructor(private service: BooksService) {}
-
-  //opcija 2:
-  // constructor(private service: BooksService) {
-  //   this.searchControl = new FormControl('');
-  //   this.radioFormGroup = new FormGroup({
-  //     filter: new FormControl('title'),
-  //   });
-  // }
+  constructor(private service: BookService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.getBooks();
   }
 
   getBooks(): void {
-    this.queryParams.page = 1;
-    this.service.getBooks(this.queryParams).subscribe({
-      next: (books) => {
+    this.params.page = 1;
+    this.service.getBooks(this.params).subscribe({
+      next: (books: Books) => {
         this.books = books;
       },
-      error: (err) => {
-        console.log(err);
+      error: (err: any) => {
+        console.log('error: ', err);
       },
     });
   }
 
-  search(): void {
+  onSearch(): void {
     if (this.radioFormGroup.value.filter == 'title') {
-      this.queryParams.filter.author = '';
-      this.queryParams.filter.title = this.searchControl.value;
+      this.params.filter.author = '';
+      this.params.filter.title = this.searchControl.value;
     } else if (this.radioFormGroup.value.filter == 'author') {
-      this.queryParams.filter.author = this.searchControl.value;
-      this.queryParams.filter.title = '';
+      this.params.filter.title = '';
+      this.params.filter.author = this.searchControl.value;
     } else {
       return;
     }
@@ -66,13 +59,13 @@ export class BooksComponent implements OnInit {
   }
 
   loadMore(): void {
-    this.queryParams.page += 1;
-    this.service.getBooks(this.queryParams).subscribe({
-      next: (books) => {
+    this.params.page += 1;
+    this.service.getBooks(this.params).subscribe({
+      next: (books: Books) => {
         this.books.results = this.books.results.concat(books.results);
       },
-      error: (err) => {
-        console.log(err);
+      error: (err: any) => {
+        console.log('error: ', err);
       },
     });
   }

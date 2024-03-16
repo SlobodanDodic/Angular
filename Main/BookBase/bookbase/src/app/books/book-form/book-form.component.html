@@ -1,27 +1,20 @@
-<div class="row mt-3">
-  <div class="col-6 offset-3">
-    <form [formGroup]="form">
-      <div class="form-group">
-        <label for="isbnInput">ISBN</label>
-        <input type="text" class="form-control" id="isbnInput" formControlName="ISBN">
-      </div>
-      <div class="form-group">
-        <label for="titleInput">Title</label>
-        <input type="text" class="form-control" id="titleInput" formControlName="title">
-      </div>
-      <div class="form-group">
-        <label for="authorInput">Author</label>
-        <input type="text" class="form-control" id="authorInput" formControlName="author">
-      </div>
-      <div class="form-group">
-        <label for="yearOfPublicationInput">Year of Publication</label>
-        <input type="number" class="form-control" id="yearOfPublicationInput" formControlName="yearOfPublication">
-      </div>
-      <div class="form-group">
-        <label for="publisherInput">Publisher</label>
-        <input type="text" class="form-control" id="publisherInput" formControlName="publisher">
-      </div>
-      <button class="btn btn-primary mt-3" (click)="onSubmit()">Submit</button>
-    </form>
+<form [formGroup]="bookForm" class="d-flex flex-column align-items-center">
+  <label class="row w-50" for="ISBN">ISBN</label>
+  <input class="row w-50 mb-3" type="text" id="ISBN" formControlName="ISBN">
+
+  <label class="row w-50" for="title">Title</label>
+  <input class="row w-50 mb-3" type="text" id="title" formControlName="title">
+
+  <label class="row w-50" for="author">Author</label>
+  <input class="row w-50 mb-3" type="text" id="author" formControlName="author">
+
+  <label class="row w-50" for="yearOfPublication">Year Of Publication</label>
+  <input class="row w-50 mb-3" type="number" id="yearOfPublication" formControlName="yearOfPublication">
+
+  <label class="row w-50" for="publisher">Publisher</label>
+  <input class="row w-50 mb-3" type="text" id="publisher" formControlName="publisher">
+
+  <div class="w-50 align-items-start">
+    <button class="btn btn-primary" (click)="onSubmit()">Submit</button>
   </div>
-</div>
+</form>
