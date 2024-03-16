@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject, TemplateRef } from '@angular/core';
+import { NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
 import { Artwork } from 'src/app/model/artwork.model';
 
 @Component({
@@ -8,4 +9,10 @@ import { Artwork } from 'src/app/model/artwork.model';
 })
 export class ArtworkItemComponent {
   @Input() artwork: Artwork = new Artwork();
+
+  private offcanvasService = inject(NgbOffcanvas);
+
+  openEnd(content: TemplateRef<any>) {
+    this.offcanvasService.open(content, { position: 'end' });
+  }
 }
