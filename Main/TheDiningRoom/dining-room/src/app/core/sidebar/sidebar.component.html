@@ -1,0 +1,13 @@
+<nav class="navbar position-fixed h-100 align-items-start bg-light p-3">
+  <div class="navbar-nav d-flex">
+    <a class="navbar-brand p-2">BookBase</a>
+    <a class="nav-link cursorPointer border-bottom p-3" [routerLink]="['home']">Home</a>
+    <a class="nav-link cursorPointer border-bottom p-3" [routerLink]="['/restaurants/all']">Restaurants</a>
+
+    <div class="navbar-nav d-flex ps-3" *ngFor="let cuisine of cuisines">
+      <a class="nav-link cursorPointer p-2" [routerLink]="['/restaurants', cuisine.toLowerCase()]">{{cuisine}}</a>
+    </div>
+
+    <a class="nav-link cursorPointer border-bottom border-top p-3" [routerLink]="['about']">About</a>
+  </div>
+</nav>

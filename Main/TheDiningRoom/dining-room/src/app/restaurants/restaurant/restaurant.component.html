@@ -1,0 +1,18 @@
+<div class="card pointer" (click)="open()">
+  <div class="card-body">
+    <h5 class="card-title text-primary pb-2">{{restaurant.name}}</h5>
+    <h6 class="card-subtitle mb-2 text-body-secondary">{{restaurant.description}}</h6>
+    <div class="row">
+      <div class="col">
+        Rating: <ngb-rating [rate]="restaurant.rating" style="color: #f79b21;" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        Price:
+        <img *ngFor="let coin of generateCoinsArray()"
+          [src]="coin <= restaurant.price ? 'assets/images/coin-full.png' : 'assets/images/coin-empty.png'">
+      </div>
+    </div>
+  </div>

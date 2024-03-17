@@ -1,0 +1,25 @@
+<div class="row align-items-center mt-2">
+  <div class="col-4">
+    <ngb-pagination [collectionSize]="restaurants.count" [page]="params.page" [pageSize]="params.pageSize"
+      (pageChange)="onPageChanged($event)" />
+  </div>
+
+  <div class="col-8">
+    <div class="row">
+      <div class="col text-end"> <b>Price range</b></div>
+      <div class="col">
+        <input type="number" [formControl]="priceFromControl" (change)="onPriceChange()" />
+      </div>
+      <div class="col">
+        <input type="number" [formControl]="priceToControl" (change)="onPriceChange()" />
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row my-3">
+  <div class="col-4 mt-2" *ngFor="let restaurant of restaurants.results">
+    <app-restaurant [restaurant]="restaurant"></app-restaurant>
+  </div>
+</div>
