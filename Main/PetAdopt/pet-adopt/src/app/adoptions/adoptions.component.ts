@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AdoptionList } from '../model/adoption.model';
-import { AdoptionService } from '../services/adoption.service';
+import { PetService } from '../services/pet.service';
+import { Adopt, AdoptList } from 'src/model/adopt.model';
+import { ToastService } from '../services/toast.service';
 
 @Component({
   selector: 'app-adoptions',
@@ -8,20 +9,42 @@ import { AdoptionService } from '../services/adoption.service';
   styleUrls: ['./adoptions.component.css'],
 })
 export class AdoptionsComponent implements OnInit {
-  adoptions: AdoptionList = new AdoptionList();
+  adoptedPets: AdoptList = new AdoptList();
 
-  constructor(private service: AdoptionService) {}
+  constructor(
+    private service: PetService,
+    private toastService: ToastService
+  ) {}
 
   ngOnInit(): void {
-    this.getAll();
+    this.getAdoptedPets();
   }
 
-  getAll() {
-    this.service.getAll().subscribe({
-      next: (adoptions: AdoptionList) => {
-        this.adoptions = adoptions;
+  getAdoptedPets(): void {
+    this.service.getAdoptedPets().subscribe({
+      next: (adoptedPets: AdoptList) => {
+        this.adoptedPets = adoptedPets;
       },
-      error: (err) => console.log(err),
+      error: (err: any) => {
+        console.log('error: ', err);
+      },
+    });
+  }
+
+  approveAdoption(adopt: Adopt): void {
+    this.service.approveAdoption(adopt.petId).subscribe({
+      next: (_adopt: Adopt) => {
+        this.toastService.show('Adoption approved', {
+          classname: 'bg-success text-light',
+        });
+        this.getAdoptedPets();
+      },
+      error: (err: any) => {
+        this.toastService.show('Adoption not approved', {
+          classname: 'bg-danger text-light',
+        });
+        console.log('error: ', err);
+      },
     });
   }
 }

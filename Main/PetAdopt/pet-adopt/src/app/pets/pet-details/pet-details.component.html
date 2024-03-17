@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col">
+    <div class="row">
+      <div class="card border-0 border-bottom pb-3">
+        <div class="row">
+          <div class="col-7">
+            <img [src]="pet.image" alt="pet.name" style="height: 25rem; object-fit: cover; width: 100%">
+          </div>
+          <div class="col-5">
+            <h4 class="card-title">{{pet.name}}</h4>
+            <p class="card-text">Category: {{pet.category}}</p>
+            <p class="card-text">Sex: {{pet.sex == "f" ? "Female" : "Male"}}</p>
+            <p class="card-text">Size: {{pet.size_kg}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <p class="pt-2">{{pet.story}}</p>
+    </div>
+  </div>
+
+  <div class="col">
+    <h4 class="card-title text-center">Adopt</h4>
+
+    <form [formGroup]="adoptForm" class="d-flex flex-column align-items-center">
+      <label class="row w-75" for="name">Name</label>
+      <input class="row w-75 mb-3" type="text" id="name" formControlName="name" placeholder="Enter your full name">
+
+      <label class="row w-75" for="contact">Contact</label>
+      <input class="row w-75 mb-3" type="text" id="contact" formControlName="contact" placeholder="Enter your contact">
+
+      <div class="d-flex flex-row w-75 justify-content-end mt-2">
+        <button class="btn btn-primary" (click)="onSubmit()">Submit request</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,55 +1,61 @@
-<div class="row align-items-center">
-  <div class="col-4">
+<div class="row mt-2 mb-4 align-items-center">
+  <div class="col">
     <div class="row align-items-center">
-      <div class="col-4">
-        <label for="form-select">Category</label>
+      <div class="col-3">
+        Category
       </div>
-      <div class="col-8">
-        <select class="form-select" name="filterCategory" (change)="getPets()" [(ngModel)]="params.filter.category">
-          <option value="">All</option>
-          <option *ngFor="let category of categories" [value]="category">
-            {{category}}</option>
+      <div class="col-9">
+        <select class="form-select" (change)="selectCategory($event)">
+          <option selected>All</option>
+          <option *ngFor="let category of categories" [value]="category">{{category}}</option>
         </select>
       </div>
     </div>
   </div>
+  <div class="col">
+    <div>
+      Sex:
+      <input class="ms-3" type="radio" name="sex" id="any" value="" (click)="filterOption($event)" checked>
+      <label class="ms-1" for="any">Any</label>
 
-  <div class="col-5">
-    <p class="d-inline">Sex:</p>
-    <div class="form-check form-check-inline px-3">
-      <input class="form-check-input ms-0 me-1" name="inlineRadioOptions" type="radio" id="any" value=""
-        [(ngModel)]="params.filter.sex" (change)="getPets()">
-      <label class="form-check-label" for="any">Any</label>
+      <input class="ms-3" type="radio" name="sex" id="female" value="f" (click)="filterOption($event)">
+      <label class="ms-1" for="female">Female</label>
+
+      <input class="ms-3" type="radio" name="sex" id="male" value="m" (click)="filterOption($event)">
+      <label class="ms-1" for="male">Male</label>
     </div>
-    <div class="form-check form-check-inline px-0">
-      <input class="form-check-input ms-0 me-1" name="inlineRadioOptions" type="radio" id="female" value="f"
-        [(ngModel)]="params.filter.sex" (change)="getPets()">
-      <label class="form-check-label" for="female">Female</label>
-    </div>
-    <div class="form-check form-check-inline px-0">
-      <input class="form-check-input ms-0 me-1" name="inlineRadioOptions" type="radio" id="male" value="m"
-        [(ngModel)]="params.filter.sex" (change)="getPets()">
-      <label class="form-check-label" for="male">Male</label>
-    </div>
+
   </div>
-
-  <div class="col-3">
+  <div class="col">
     <div class="row align-items-center">
-      <div class="col-4">
-        <label for="form-select">SortBy</label>
+      <div class="col-3">
+        SortBy
       </div>
-      <div class="col-8">
-        <select class="form-select" name="sort" [(ngModel)]="params.sort" (change)="getPets()">
-          <option value="">--</option>
+      <div class="col-9">
+        <select class="form-select" (change)="selectSorting($event)">
+          <option selected>--</option>
           <option value="name">Name</option>
           <option value="size_kg">Size</option>
         </select>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="row align-items-center mt-5">
-    <div class="col-3" *ngFor="let pet of petList.results">
-      <app-pet class="item" [pet]="pet" [routerLink]="[pet._id]"></app-pet>
+<div class="row">
+  <div class="col-4" *ngFor="let pet of pets.results">
+    <div class="card m-2" style="height: 30rem; cursor: pointer" [routerLink]="['/pets', pet._id]">
+      <img [src]="pet.image" class="card-img-top" style="height: 20rem; object-fit: cover; width: 100%">
+      <div class="card-body">
+        <h4 class="text-center mt-1 mb-3">{{pet.name}}</h4>
+
+        <div class="d-flex flex-row justify-content-between">
+          <p class="card-text">Category: {{pet.category}}</p>
+          <p class="card-text">Size: {{pet.size_kg}}kg</p>
+        </div>
+
+        <p class="card-text">Sex: {{pet.sex == "f" ? "Female" : "Male"}}</p>
+      </div>
     </div>
   </div>
+</div>

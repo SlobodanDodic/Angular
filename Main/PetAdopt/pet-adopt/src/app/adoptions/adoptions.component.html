@@ -5,15 +5,18 @@
       <th scope="col">Pet Name</th>
       <th scope="col">Name</th>
       <th scope="col">Contact</th>
+      <th scope="col"></th>
     </tr>
   </thead>
-
   <tbody>
-    <tr *ngFor="let adoption of adoptions.results">
-      <th>{{adoption.petId}}</th>
+    <tr *ngFor="let adoption of adoptedPets.results">
+      <td>{{adoption.petId}}</td>
       <td>{{adoption.petName}}</td>
       <td>{{adoption.name}}</td>
       <td>{{adoption.contact}}</td>
+      <td>
+        <button class="btn btn-primary btn-sm" (click)="approveAdoption(adoption)">Approve</button>
+      </td>
     </tr>
   </tbody>
 </table>
