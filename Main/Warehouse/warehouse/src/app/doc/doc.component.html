@@ -1,0 +1,50 @@
+<div class="row mt-2">
+  <div class="col-2">
+    <ngb-pagination [collectionSize]="docs.count" [pageSize]="params.pageSize" [page]="params.page"
+      (pageChange)="onPageChanged($event)" />
+  </div>
+
+  <div *ngIf="showColumns" class="col-8 d-flex flex-row flex-wrap align-items-center justify-content-center">
+    <div class="d-flex flex-row flex-wrap me-4" *ngFor="let col of columns">
+      <input class="me-1" type="checkbox" [id]="col.field" [checked]="col.visible" (change)="toggleColumn(col)">
+      <label [for]="col.field">{{col.name}}</label>
+    </div>
+  </div>
+
+  <div class="col text-end">
+    <button class="btn btn-primary btn-sm" (click)="toggleCheckboxVisibility()">
+      {{ showColumns ? 'Close' : 'Open'}} Table Settings
+    </button>
+  </div>
+</div>
+
+<table class="table mt-4">
+  <thead>
+    <tr>
+      <th *ngIf="columns[0].visible" scope="col" class="text-primary" (click)="onSort('dateOfCreation')">Creation Date
+        <i class="bi bi-chevron-expand"></i>
+      </th>
+      <th *ngIf="columns[1].visible" scope="col" class="text-primary" (click)="onSort('dateOfRecording')">Recording Date
+        <i class="bi bi-chevron-expand"></i>
+      </th>
+      <th *ngIf="columns[2].visible" scope="col" class="text-primary" (click)="onSort('status')">Status <i
+          class="bi bi-chevron-expand"></i></th>
+      <th *ngIf="columns[3].visible" scope="col" class="text-primary" (click)="onSort('transactionType')">Transaction <i
+          class="bi bi-chevron-expand"></i></th>
+      <th *ngIf="columns[4].visible" scope="col">Business Partner</th>
+      <th *ngIf="columns[5].visible" scope="col">Partner Location</th>
+      <th *ngIf="columns[6].visible" scope="col">Year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let doc of docs.results" [routerLink]="['/doc', doc._id]">
+      <td *ngIf="columns[0].visible">{{doc.dateOfCreation | date: 'mediumDate'}}</td>
+      <td *ngIf="columns[1].visible">{{doc.dateOfRecording | date: 'mediumDate'}}</td>
+      <td *ngIf="columns[2].visible">{{doc.status}}</td>
+      <td *ngIf="columns[3].visible">{{doc.transactionType}}</td>
+      <td *ngIf="columns[4].visible">{{doc.businessPartner.name}}</td>
+      <td *ngIf="columns[5].visible">{{doc.businessPartner.address}}</td>
+      <td *ngIf="columns[6].visible">{{doc.year}}</td>
+    </tr>
+  </tbody>
+</table>

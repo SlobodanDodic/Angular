@@ -1,0 +1,19 @@
+<p class="text-center"><b>Document Items</b></p>
+<table class="table table-striped mt-4">
+  <thead>
+    <tr>
+      <th scope="col">Article</th>
+      <th class="text-center" scope="col">Price</th>
+      <th class="text-center" scope="col">Quantity</th>
+      <th class="text-center" scope="col">Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of items.results">
+      <td>{{codeToArticleName(item.article)}}</td>
+      <td class="text-end">{{item.price | number:'1.2-2'}}</td>
+      <td class="text-center">{{item.quantity}}</td>
+      <td class="text-end">{{item.price * item.quantity | number:'1.2-2'}}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,4 @@
+thead tr .text-primary,
+tbody tr {
+  cursor: pointer;
+}

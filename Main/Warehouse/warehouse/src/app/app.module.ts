@@ -3,18 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
-import { DocumentsComponent } from './documents/documents.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { DocumentDetailsComponent } from './documents/document-details/document-details.component';
-import { DocFormComponent } from './documents/document-details/doc-form/doc-form.component';
-import { DocListComponent } from './documents/document-details/doc-list/doc-list.component';
-import { DocStatusComponent } from './documents/document-details/doc-status/doc-status.component';
+import { NavbarComponent } from './core/navbar/navbar.component';
+import { HomeComponent } from './core/home/home.component';
+import { AboutComponent } from './core/about/about.component';
+import { DocComponent } from './doc/doc.component';
+import { DocDetailsComponent } from './doc/doc-details/doc-details.component';
+import { StatusComponent } from './doc/doc-details/status/status.component';
+import { FormComponent } from './doc/doc-details/form/form.component';
+import { ListComponent } from './doc/doc-details/list/list.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +22,11 @@ import { DocStatusComponent } from './documents/document-details/doc-status/doc-
     NavbarComponent,
     HomeComponent,
     AboutComponent,
-    DocumentsComponent,
-    DocumentDetailsComponent,
-    DocFormComponent,
-    DocListComponent,
-    DocStatusComponent,
+    DocComponent,
+    DocDetailsComponent,
+    StatusComponent,
+    FormComponent,
+    ListComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,6 +34,7 @@ import { DocStatusComponent } from './documents/document-details/doc-status/doc-
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    NgbPaginationModule,
     NgbModule,
   ],
   providers: [],

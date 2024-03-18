@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
-import { DocumentsComponent } from './documents/documents.component';
-import { DocumentDetailsComponent } from './documents/document-details/document-details.component';
+import { HomeComponent } from './core/home/home.component';
+import { AboutComponent } from './core/about/about.component';
+import { DocComponent } from './doc/doc.component';
+import { DocDetailsComponent } from './doc/doc-details/doc-details.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'documents', component: DocumentsComponent },
-  { path: 'documents/:id', component: DocumentDetailsComponent },
+  { path: 'doc', component: DocComponent },
+  { path: 'doc/:id', component: DocDetailsComponent },
   { path: '', redirectTo: '/home', pathMatch: 'prefix' },
 ];
 

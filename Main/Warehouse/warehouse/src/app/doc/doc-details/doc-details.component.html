@@ -1,0 +1,9 @@
+<app-status [doc]="doc" (docUpdated)="recordDocument($event)"></app-status>
+
+<div class="row mt-4">
+
+  <app-list class="col" [items]="items" [articles]="articles"></app-list>
+
+  <app-form *ngIf="doc.status == 'opened'" class="col-4 text-center" [articles]="articles"
+    (itemAdded)="onSave($event)"></app-form>
+</div>

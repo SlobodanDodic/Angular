@@ -1,0 +1,21 @@
+<p><b>Add new item</b></p>
+<div class="mt-4">
+  <form [formGroup]="itemForm" class="d-flex flex-column align-items-center">
+    <label class="row w-75 fw-bold" for="article">Article</label>
+    <select formControlName="article" class="form-select form-select-sm row w-75 mb-3 border border-secondary-subtle">
+      <option selected></option>
+      <option *ngFor="let article of articles.results" [value]="article.code">{{article.name}}
+      </option>
+    </select>
+
+    <label class="row w-75 fw-bold" for="price">Price</label>
+    <input class="row w-75 mb-3 border border-secondary-subtle" type="number" id="price" formControlName="price">
+
+    <label class="row w-75 fw-bold" for="quantity">Quantity</label>
+    <input class="row w-75 mb-3 border border-secondary-subtle" type="number" id="quantity" formControlName="quantity">
+
+    <div class="d-flex flex-row w-75 justify-content-end mt-2">
+      <button class="btn btn-primary" (click)="saveItem()">Save</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,16 @@
+<div class="row bg-light p-2">
+  <div class="col">
+    <p>Transaction type: {{doc.transactionType}}</p>
+    <p>Date of Creation: {{doc.dateOfCreation | date: 'longDate'}}</p>
+  </div>
+  <div class="col">
+    <p><u>Business Partner</u></p>
+    <p>{{doc.businessPartner.name}}</p>
+    <p>{{doc.businessPartner.city}}, {{doc.businessPartner.address}}</p>
+  </div>
+  <div class="col">
+    <p>Status: {{doc.status}}</p>
+    <button *ngIf="doc.status == 'opened'" class="btn btn-primary btn-sm" (click)="updateDocument()">Record
+      Document</button>
+  </div>
+</div>

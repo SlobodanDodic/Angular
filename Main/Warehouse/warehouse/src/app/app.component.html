@@ -1,10 +1,16 @@
-<div class="container-fluid px-0">
-  <app-navbar></app-navbar>
-
-  <div class="row m-0 p-0">
-    <div class="col outlet">
-      <router-outlet></router-outlet>
+<div class="container-fluid">
+  <div class="row">
+    <img src="/assets/images/cover.png" alt="cover">
+  </div>
+  <div class="row">
+    <div class="col">
+      <app-navbar></app-navbar>
     </div>
   </div>
 
+  <div class="row">
+    <div class="col m-3">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>

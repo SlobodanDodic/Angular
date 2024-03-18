@@ -1,18 +1,16 @@
-export class DocumentList {
+export class DocList {
   count: number;
-  results: Document[];
+  results: Doc[];
 
   constructor(obj?: any) {
     this.count = (obj && obj.count) || 0;
     this.results =
-      (obj &&
-        obj.results &&
-        obj.results.map((elem: any) => new Document(elem))) ||
+      (obj && obj.results && obj.results.map((elem: any) => new Doc(elem))) ||
       [];
   }
 }
 
-export class Document {
+export class Doc {
   _id: number;
   dateOfRecording: string;
   dateOfCreation: string;
