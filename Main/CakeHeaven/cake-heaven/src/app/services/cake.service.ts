@@ -1,7 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
-import { Slideshow } from '../model/slideshow.model';
+import { Injectable } from '@angular/core';
 import { Cake } from '../model/cake.model';
 
 const baseURL = 'http://localhost:3000/api';
@@ -12,16 +11,9 @@ const baseURL = 'http://localhost:3000/api';
 export class CakeService {
   constructor(private http: HttpClient) {}
 
-  getCarousel(): Observable<Slideshow[]> {
-    return this.http.get(`${baseURL}/slideshow`).pipe(
-      map((data: any) => {
-        return (data && data.map((elem: any) => new Slideshow(elem))) || [];
-      })
-    );
-  }
-
-  getCakes(params?: any): Observable<Cake[]> {
+  getCakes(params: any): Observable<Cake[]> {
     let options = {};
+
     if (params) {
       options = {
         params: new HttpParams()
@@ -36,7 +28,7 @@ export class CakeService {
 
     return this.http.get(`${baseURL}/cakes`, options).pipe(
       map((data: any) => {
-        return (data && data.map((elem: any) => new Cake(elem))) || [];
+        return data.map((cake: Cake) => new Cake(cake));
       })
     );
   }
@@ -44,15 +36,15 @@ export class CakeService {
   getIngredients(): Observable<string[]> {
     return this.http.get(`${baseURL}/ingredients`).pipe(
       map((data: any) => {
-        return data as Array<string>;
+        return data;
       })
     );
   }
 
-  getCakeDetails(id: number): Observable<Cake> {
+  getCake(id: number): Observable<Cake> {
     return this.http.get(`${baseURL}/cakes/${id}`).pipe(
-      map((elem: any) => {
-        return new Cake(elem);
+      map((data: any) => {
+        return new Cake(data);
       })
     );
   }

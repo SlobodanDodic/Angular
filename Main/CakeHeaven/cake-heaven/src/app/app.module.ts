@@ -2,28 +2,28 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NavbarComponent } from './navbar/navbar.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './core/home/home.component';
+import { ContactComponent } from './core/contact/contact.component';
+import { ProfileComponent } from './core/profile/profile.component';
+import { NavbarComponent } from './core/navbar/navbar.component';
 import { CakesComponent } from './cakes/cakes.component';
-import { ContactComponent } from './contact/contact.component';
-import { ProfileComponent } from './profile/profile.component';
-import { CakeComponent } from './cakes/cake/cake.component';
-import { CakeDetailsComponent } from './cakes/cake/cake-details/cake-details.component';
+import { CakeItemComponent } from './cakes/cake-item/cake-item.component';
+import { CakeDetailsComponent } from './cakes/cake-details/cake-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
     HomeComponent,
-    CakesComponent,
     ContactComponent,
     ProfileComponent,
-    CakeComponent,
+    NavbarComponent,
+    CakesComponent,
+    CakeItemComponent,
     CakeDetailsComponent,
   ],
   imports: [
@@ -32,6 +32,8 @@ import { CakeDetailsComponent } from './cakes/cake/cake-details/cake-details.com
     NgbModule,
     HttpClientModule,
     ReactiveFormsModule,
+    FormsModule,
+    NgbPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Cake } from 'src/app/model/cake.model';
 import { CakeService } from 'src/app/services/cake.service';
 
@@ -9,22 +9,24 @@ import { CakeService } from 'src/app/services/cake.service';
   styleUrls: ['./cake-details.component.css'],
 })
 export class CakeDetailsComponent implements OnInit {
-  cakeId: number = 0;
+  id: number = 0;
   cake: Cake = new Cake();
 
   constructor(private service: CakeService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
-      this.cakeId = params['id'];
-      this.getCakeDetails();
+      if (params['id']) {
+        this.id = params['id'];
+        this.getCake();
+      }
     });
   }
 
-  getCakeDetails() {
-    this.service.getCakeDetails(this.cakeId).subscribe({
-      next: (response: Cake) => {
-        this.cake = response;
+  getCake(): void {
+    this.service.getCake(this.id).subscribe({
+      next: (cake: Cake) => {
+        this.cake = cake;
       },
       error: (err: any) => {
         console.log('error: ', err);

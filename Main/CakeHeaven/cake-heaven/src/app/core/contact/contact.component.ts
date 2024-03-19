@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../model/user.model';
-import { UserService } from '../services/user.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Message } from '../model/message.model';
 import { Router } from '@angular/router';
+import { Message } from 'src/app/model/message.model';
+import { User } from 'src/app/model/user.model';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-contact',

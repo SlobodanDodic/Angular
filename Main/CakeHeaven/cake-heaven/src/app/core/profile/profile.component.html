@@ -1,0 +1,27 @@
+<form [formGroup]="form" class="d-flex flex-column align-items-center">
+  <label class="row w-50">First Name</label>
+  <input class="row w-50 mb-3" type="text" formControlName="firstName">
+  <small class="text-danger" *ngIf="firstName?.touched && firstName?.errors?.['required']" class="text-danger">First
+    name is
+    required!</small>
+
+  <label class="row w-50">Last Name</label>
+  <input class="row w-50 mb-3" type="text" formControlName="lastName">
+  <small class="text-danger" *ngIf="lastName?.touched && lastName?.errors?.['required']" class="text-danger">Last
+    name is
+    required!</small>
+
+  <label class="row w-50">Email</label>
+  <input class="row w-50 mb-3" type="email" formControlName="email">
+  <small class="text-danger" *ngIf="email?.touched && email?.errors?.['required']" class="text-danger">Email is
+    required!</small>
+
+  <div class="d-flex flex-row w-50 justify-content-start mt-2">
+    <div *ngIf="toggle">
+      <button class="btn btn-primary me-2" (click)="onCancel()">Cancel</button>
+      <button class="btn btn-primary" [disabled]="form.invalid" (click)="onOk()">Ok</button>
+    </div>
+
+    <button class="btn btn-primary" (click)="onEdit()" *ngIf="!toggle">Edit</button>
+  </div>
+</form>

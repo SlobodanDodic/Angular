@@ -1,10 +1,13 @@
-<div class="container-fluid px-0">
-  <app-navbar></app-navbar>
-
-  <div class="row m-0">
-    <div class="col mt-5 pt-3">
-      <router-outlet></router-outlet>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <app-navbar></app-navbar>
     </div>
   </div>
 
+  <div class="row">
+    <div class="col outlet">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>
