@@ -1,0 +1,29 @@
+<div class="row">
+  <div ngbAccordion #accordion="ngbAccordion">
+    <div ngbAccordionItem="first">
+      <h2 ngbAccordionHeader>
+        <button ngbAccordionButton class="bg-primary fw-bold text-primary"
+          style="--bs-bg-opacity: .25;">{{accordianModulTitle ? accordianModulTitle : accordianInfoTitle}}</button>
+      </h2>
+      <div ngbAccordionCollapse>
+        <div ngbAccordionBody>
+          <ng-template>
+            <div class="row" *ngIf="accordianModulTitle">
+              <div class="col-4" *ngFor="let module of course.modules">
+                <p class="fw-bold text-center" style="min-height: 50px;">{{module.name}}</p>
+                <ul class="m-0 p-2" *ngFor="let item of module.subjects">
+                  <li>{{item}}</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="row" *ngIf="accordianInfoTitle">
+              <div class="col">{{course.description}}</div>
+            </div>
+
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

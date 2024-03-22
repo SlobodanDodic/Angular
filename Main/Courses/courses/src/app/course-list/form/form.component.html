@@ -1,0 +1,26 @@
+<form [formGroup]="courseForm" class="d-flex flex-column align-items-center mt-5 p-3 border border-black rounded">
+  <label class="row w-100" for="kurs">Kurs</label>
+  <select *ngIf="courseName" class="form-select" disabled>
+    <option selected>{{courseName}}</option>
+  </select>
+
+  <select *ngIf="!courseName" class="form-select" formControlName="course" (change)="onChangeCourse($event)">
+    <option *ngFor="let course of courses.results" value="{{course.name}}">{{course.name}}</option>
+  </select>
+
+  <label class="row w-100 mt-3" for="name">Ime i prezime</label>
+  <input class="row w-100 mb-3" type="text" id="name" formControlName="name">
+
+  <label class="row w-100" for="eMail">Email</label>
+  <input class="row w-100 mb-3" type="eMail" id="eMail" formControlName="eMail">
+
+  <label class="row w-100" for="tel">Telefon</label>
+  <input class="row w-100 mb-3" type="text" id="tel" formControlName="tel">
+
+  <label class="row w-100" for="address">Adresa</label>
+  <input class="row w-100 mb-3" type="text" id="address" formControlName="address">
+
+  <div class="w-100">
+    <button class="btn btn-primary" (click)="onSubmit()">Prijavi me</button>
+  </div>
+</form>

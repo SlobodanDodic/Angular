@@ -1,0 +1,11 @@
+.container-fluid,
+.row,
+.col {
+  margin: 0;
+  padding: 0;
+}
+
+.outlet {
+  margin-top: 3rem;
+  padding: 2rem;
+}
